@@ -21,24 +21,22 @@
             overflow: hidden;
             width: 100%;
         }
+      
+        aside nav,.options{
+            width:100%;
+        }
         .admin-search-bar{float:right; margin-right:50px;}
 
-        .admin-search-bar button  {padding: 0 10px;
-        border-radius: 10px;
-        outline: none;
-        height: 26px;}
+           .admin-search-bar button  {padding: 0 10px;
+    border-radius: 10px;
+    outline: none;
+    height: 26px;}
         .admin-search-bar input {
-        width: 250px;
-        padding: 0 10px;
-        border-radius: 10px;
-        outline: none;
-        height: 25px;}
-        aside nav{ width:100%;}
-        aside nav .admin-search-bar{
-            display:inline-block;
-        }
-     .options ul{display:inline-block;}
-
+            width: 250px;
+            padding: 0 10px;
+            border-radius: 10px;
+            outline: none;
+            height: 25px;}
         nav .icon ul {
             box-shadow: 2px 0 8px #000
         }
@@ -75,7 +73,12 @@
             padding-left: 20px;
             margin: 10px 0
         }
-
+        .admin-search-bar {
+            display: inline-block;
+        }
+        nav .options ul { 
+            display : inline-block;
+        }
         nav .options ul li {
             padding: 5px 5px 5px 20px;
             height: 22px
@@ -133,46 +136,28 @@
     <main>
         <aside>
             <nav>
-                <section class="icon">
-                    <ul>
-                        <li>
-                            <img width="20" height="20" src="https://static.thenounproject.com/png/14173-200.png" alt="">
-                        </li>
-                        <hr>
-                        <li>
-                            <img width="20" height="20" src="https://image.flaticon.com/icons/svg/54/54908.svg" alt="">
-                        </li>
-                        <hr>
-                        <li class="select">
-                            <img width="20" height="20" src="http://cdn.onlinewebfonts.com/svg/img_304350.png" alt="">
-                        </li>
-                        <hr>
-                        <li>
-                            <img width="20" height="20" src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png"
-                                alt="">
-                        </li>
-                        <hr>
-                    </ul>
-                </section>
+
                 <section class="options">
                     <p>Dashboard</p>
                     <h6>FILTERS</h6>
                     <ul>
-                        <li>Add Hostel</li>
-                        <li>Add Packages</li>
-                        <li>Add Features</li>
-                        <li>View All Hostels</li>
-                        <li>Booking Requests
+                        <li>Hostels</li>
+                        <li>Hostels Owners</li>
+                        <li>New Hostels
                             <span>32</span>
                         </li>
+                        <li>New Hostels Owners
+                            <span>32</span>
+                        </li>
+
                     </ul>
                     <div class="admin-search-bar">
-                    <input type="text">
-                    <button type="submit">Search</button>
-                </div>
+                        <input type="text">
+                        <button type="submit">Search</button>
+                    </div>
                     <h6>RECENT</h6>
                 </section>
-            
+
             </nav>
         </aside>
     </main>
