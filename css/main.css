@@ -1,0 +1,244 @@
+@font-face{
+    font-family: SansProFont;
+    src: url(../fonts/SourceSansPro-Regular.otf);
+}
+
+*{
+    margin:0 auto; padding: 0; font-family: SansProFont;
+}
+
+.clear{
+    clear: both;
+}
+.sep{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-bottom: 2px solid #149cc1;
+}
+.page{
+    padding: 5px;
+    padding-left: 20px;
+    color: #606060;
+}
+/*
+------------- Header CSS ---------------------
+*/
+header{
+    background: #fefefe;
+    font-family: BoldFont;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+     -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+header img{
+    height: 75px;
+}
+#mb-logo{
+    width: 80%;
+    display: inline;
+}
+.hd-sep{
+   height: 80px;
+}
+nav{
+    background: #fefefe;
+    height: auto;
+}
+nav ul li{
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+#toggle {
+  display: none;
+}
+#toggle:not(:checked)+nav {
+  display: none;
+}
+
+#toggle:checked+nav {
+  display: block;
+}
+#nav-icon{
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    font-size: 2em;
+}
+nav a{
+    text-decoration: none;
+    color: #606060;
+    font-size: 20px;
+}
+nav a:visited{
+    
+}
+nav a:hover{
+    color: #222222;
+    border-bottom: 2px solid #129cc1;
+}
+nav a:active{
+    border-bottom: 2px solid #129cc1;
+}
+header label a
+{
+    padding: 15px;
+    font-size: 22px;
+    color: #149cc1;
+    text-decoration: none;
+}
+.ser-link{
+    position: relative;
+}
+.ser-dropdown{
+    display: none;
+    position: absolute;
+    background: #fefefe;
+    min-width: 230px;
+    z-index: 19999;
+}
+.ser-link:hover .ser-dropdown{
+    display: block;
+}
+.ser-dropdown ul{
+    list-style: none;
+}
+
+@media(min-width: 768px) {
+    nav{
+        box-sizing: border-box;
+        background: none;
+        float: right;
+    }
+    #mb-logo{
+        float: left;
+        width: 200px;
+    }
+    #toggle:not(:checked)+nav{
+     display: inline-block;
+    }
+    #toggle:checked+nav{
+     display: inline-block;
+    }
+    header label:nth-child(2){
+     display: none;
+    }
+    nav ul li{
+       display: inline-block;
+       padding: 3px;
+       padding-left: 8px;
+       padding-top: 30px;
+    }
+}
+
+@media(min-width: 1024px) {
+    nav ul li{
+      padding: 15px;
+      padding-top: 30px;
+   }
+}
+
+/*
+------------- Content CSS ---------------------
+*/
+main{
+    background: #ddd;
+}
+.admin-form{
+    width: 95%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     box-sizing: border-box;
+    text-align: center;
+}
+.admin-form div
+{
+    padding: 10px;
+}
+.admin-form div button{
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #606060;
+}
+.admin-form div input{
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    color: #606060;
+}
+.admin-form input{
+     width: 90%;
+}
+.admin-form div button:hover{
+    color: #222222;
+}
+.conly{
+    color: red;
+}
+textarea{
+    width: 90%;
+    height: 100px;
+}
+/* HTTP Error */
+#http-error-sec{
+    width: 100%;
+    text-align: center;
+}
+#http-error-sec h1{
+    color: #129cc1;
+    font-size: 3em;
+}
+#http-error-sec p{
+    color: #666666;
+    font-size: 1.5em;
+}
+#error-banner{
+    width: 100%;
+    height: 200px;
+}
+#error-banner img{
+    width: 100%;
+}
+@media(min-width: 768px)
+{
+    #http-error-sec{
+        height: 380px;
+    }
+    #error-banner{
+        width: 60%;
+        height: 200px;
+    }
+    #error-banner img{
+        width: 40%;
+    }
+}
+/* For Print */
+@media print{
+    header{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+}
+
+footer{
+    background: #fcfcfc;
+    color: #666666;
+    height: auto;
+}
+footer p{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
