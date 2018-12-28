@@ -23,7 +23,7 @@
 				$_SESSION['valid'] = true;
 	        	$_SESSION['timeout'] = time();
 				$_SESSION['email'] = $row['email'];
-				$_SESSION['pass'] = $row['pass'];
+				$_SESSION['upic'] = $row['picture'];
 				$_SESSION['uname'] = $row['name'];
 			}
 			header('Location: ho_dashboard.php');

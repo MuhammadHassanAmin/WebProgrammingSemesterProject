@@ -18,6 +18,19 @@
                     <p>Welcome User! <?php echo $_SESSION['uname'] ?></p>
                 <?php 
             }
+            ?><div id="hoprofile"><?php
+            if (!isset($_SESSION['upic'])) {
+                ?>
+                <p>You have profile pricture!</p>
+                    <?php 
+                }
+                else
+                {
+                    ?>
+                        <p>You have no profile picture.</p>
+                    <?php
+                }
+            ?></div><?php
         ?>
     </div>
 </body>
