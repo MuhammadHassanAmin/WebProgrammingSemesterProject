@@ -114,14 +114,18 @@ header label a
     nav{
         box-sizing: border-box;
         background: none;
-        float: right;
+        /* float: right; */
+        display: inline-block;
     }
     #mb-logo{
-        float: left;
-        width: 200px;
+        /* float: left; */
+        width: 20%;
+        display: inline-block;
+        height: 100%;
     }
     #toggle:not(:checked)+nav{
      display: inline-block;
+     width: 70%;
     }
     #toggle:checked+nav{
      display: inline-block;
@@ -248,3 +252,5 @@ footer p{
     position: absolute;
     
 }
+
+

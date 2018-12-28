@@ -14,7 +14,6 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
-
 	function getMemberId($email)
 	{
 		$db=mysqli_connect("localhost","root","","hosteltracker");
