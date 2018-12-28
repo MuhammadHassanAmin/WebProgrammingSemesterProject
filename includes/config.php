@@ -7,6 +7,7 @@
         $DBPass='';
 		$DBName='hosteltracker';
 		$db=mysqli_connect("localhost","root","","hosteltracker");
+		
 	 function sanitizeData($data) {
 		$data = trim($data);
 		$data = stripslashes($data);

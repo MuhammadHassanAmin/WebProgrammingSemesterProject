@@ -23,6 +23,7 @@
         <a href="add_hostel.php">Add Hostel</a><br>
         <a href="add_package.php">Add Package</a><br>
         <a href="add_feature.php">Add Feature</a><br>
+        <a href="view_hostels.php">View Hostels</a><br>
     </div>
 </body>
 </html>
