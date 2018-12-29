@@ -24,6 +24,7 @@
         <a href="add_package.php">Add Package</a><br>
         <a href="add_feature.php">Add Feature</a><br>
         <a href="view_hostels.php">View Hostels</a><br>
+        <a href="add_gallery.php">Add Gallery</a><br>
     </div>
 </body>
 </html>
