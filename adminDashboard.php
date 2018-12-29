@@ -16,15 +16,20 @@
 	    <script src="/js/html5shiv-printshiv.js"></script>
 	<![endif]-->
     <style>
+        /* Header CSS */
+        
+
+
         /* Start  Navbar */
 
-        aside {
+        section.dashboard {
             float: left;
             overflow: hidden;
             width: 100%;
+            margin-top:20px;
         }
       
-        aside nav,.options{
+        section .dashboard nav,.options{
             width:100%;
         }
         .admin-search-bar{float:right; margin-right:50px;}
@@ -110,39 +115,58 @@
 </head>
 
 <body>
-    <header>
-        <div id="mb-logo">
-            <h1><a href="/index.php">Hostel Tracker</a></h1>
+<div class="header-top">
+     <div class="social-links-top-header">
+         <a href="">
+             <img src="./graphics/facebook.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/twitter.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/youtube.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/instagram.png" alt="">
+         </a>
+     </div>
+</div>
+<header class="header">
+        <div class="container">
+
+            <!-- Header Logo -->
+            <div class="header__logo">
+                <img src="./graphics/logo.png" alt="logo">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="header__search-bar">
+                <form action="">
+                    <input type="text" value="" placeholder="Search......">
+                </form>
+            </div>
+
+            <!-- Nav -->
+            <nav class="navbar">
+            <input type="checkbox" id="nav-links">
+        <label for="nav-links"></label>
+                <ul class="navbar__nav">
+                    <li class="navbar__item"><a href="#">Log In</a></li>
+                    <li class="navbar__item"><a href="#">Sign Up</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="/login.php">Login</a>
-                </li>
-                <li>
-                    <a href="/registration.php">Register</a>
-                </li>
-                <li>
-                    <a href="/contact.php">Contact Us</a>
-                </li>
-            </ul>
-
-        </nav>
-
     </header>
     <div class="hd-sep"></div>
     <!--   Main Content  -->
     <main>
-        <aside>
+        <section class="dashboard">
             <nav>
-
                 <section class="options">
                     <p>Dashboard</p>
                     <h6>FILTERS</h6>
                     <ul>
+                        <li>Users</li>
                         <li>Hostels</li>
                         <li>Hostels Owners</li>
                         <li>New Hostels
@@ -161,10 +185,38 @@
                 </section>
 
             </nav>
-        </aside>
+        </section>
     </main>
 
-
+    <footer>
+        <div class="footer-left">
+            <h3>Hostel Hub</h3>
+            <h4>Get in Touch With Us</h4>
+            <div class="social-links-top-footer">
+         <a href="">
+             <img src="./graphics/facebook.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/twitter.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/youtube.png" alt="">
+         </a>
+         <a href="">
+             <img src="./graphics/instagram.png" alt="">
+         </a>
+     </div>
+            <p>All Rights Reserved with Hostel Hub <br> Copyright Protected©2018</p>
+        </div>
+        <div class="footer-right">
+            <div class="vertically-align-center">
+                <h3>SUBSCRIBE</h3>
+                <h4>To Get Latest Discount Offers!</h4>
+                <input type="text">
+                <button type="submit">SUBSCRIBE NOW!</button>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
