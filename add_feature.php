@@ -19,7 +19,7 @@
                 <div>
                     <?php 
                          $member=getMemberId($_SESSION['email']);
-                         $query = "SELECT * FROM hostels where id='".$member."'";
+                         $query = "SELECT * FROM hostels where owner_id='".$member."'";
                          $result = $db->query($query);
                          if (!empty($result)) {
                              ?>
@@ -27,8 +27,8 @@
                              <?php
                                 while ($item = mysqli_fetch_assoc($result)) {?>
                                 <option value="<?php echo $item['id'] ?>"><?php echo $item['hostel_name'] ?></option>                   
-                            </select><?php
-                         }
+                                <?php } ?>               
+                            </select><?php                      
                         }
                     ?>
                 </div>

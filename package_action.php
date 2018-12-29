@@ -19,7 +19,8 @@
             trigger_error('Wrong SQL: ' . $sql .
             ' Error: ' . $conn->error, E_USER_ERROR);
             } else {
-            echo "Row inserted successfully<br />";
+            echo "Package added successfully<br />";
+            header( "refresh:2;url=ho_dashboard.php" );
            /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
             echo "Affected Rows: " . $conn->affected_rows . "<br />";*/
             

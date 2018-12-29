@@ -12,7 +12,8 @@ if (isset($_GET['status1'])) {
             <thead>
                 <tr>
                     <th>Feature Name</th>
-                    <th>Feature Description</th>    
+                    <th>Feature Description</th>  
+                    <th></th>  
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,9 @@ if (isset($_GET['status1'])) {
                         <td><?php echo $item['feature_name'] ?></td>
                         
                         <td><?php echo $item['feature_des'] ?></td>
+                        <td>
+                            <a href="edit_feature.php?id=<?php echo $item['id'] ?>">Edit</a>
+                        </td>
                     </tr>
                 <?php
             }

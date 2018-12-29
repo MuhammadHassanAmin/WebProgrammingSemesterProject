@@ -98,7 +98,7 @@
                 <div>
                     <?php 
                     $member=getMemberId($_SESSION['email']);
-                    $query = "SELECT * FROM hostels where id='".$member."'";
+                    $query = "SELECT * FROM hostels where owner_id='".$member."'";                    
                     $result = $db->query($query);
                     if (!empty($result)) {
                        ?>
@@ -110,6 +110,7 @@
                                     <th>Hostel City</th>
                                     <th>Hostel Sector</th>
                                     <th>Hostel Address</th>
+                                    <th></th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -135,6 +136,9 @@
                                 <td >
                                     <input type="checkbox" id="fb" name="status1" value="<?php echo $item['id'] ?>"> 
                                     <label for="fb">Features</label> 
+                                </td>
+                                <td>
+                                    <a href="edit_hostel.php?id=<?php echo $item['id'] ?>">Edit</a>
                                 </td>
                                 </tr>
                                 
@@ -163,7 +167,7 @@
 </html> 
 <script>
     $(document).ready(function(){
-       $('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
+       //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
        
        $('input[name=status]').change(function(){
            $('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());

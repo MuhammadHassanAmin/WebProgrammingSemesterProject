@@ -3,7 +3,7 @@ if (isset($_GET['status'])) {
     ?>
     <div>
         <?php 
-        $hosel_id=$_GET['status'];
+       $hosel_id=$_GET['status'];
        $query = "SELECT * FROM packages where hostel_id='".$hosel_id."'";
        // $query = "SELECT * FROM packages";
        $db=mysqli_connect("localhost","root","","hosteltracker");
@@ -15,7 +15,8 @@ if (isset($_GET['status'])) {
                 <tr>
                     <th>Package Name</th>
                     <th>Package Price</th>
-                    <th>Package Description</th>    
+                    <th>Package Description</th>
+                    <th></th>    
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,9 @@ if (isset($_GET['status'])) {
                         <td><?php echo $item['pack_price'] ?></td>
                         
                         <td><?php echo $item['pack_des'] ?></td>
+                        <td>
+                            <a href="edit_package.php?id=<?php echo $item['id'] ?>">Edit</a>
+                        </td>
                     </tr>
                 <?php
             }
