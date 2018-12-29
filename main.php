@@ -1,5 +1,27 @@
 <?php include 'includes/config.php';  ?>
-
+<?php 
+if (isset($_GET['submitRating'])) {
+    $rating = $_COOKIE['rating'];
+    $hostel_id =1;
+    $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
+    if ($conn->connect_error) {
+    trigger_error('Database connection failed: ' .
+    $conn->connect_error, E_USER_ERROR);
+    }else{
+        $sql="INSERT INTO rating(hostel_id,rating) values ('$hostel_id','$rating')";
+        if($conn->query($sql) === false) {
+        trigger_error('Wrong SQL: ' . $sql .
+        ' Error: ' . $conn->error, E_USER_ERROR);
+        } else {
+        echo "Rating done successfully<br />";
+        header( "refresh:1;url=main.php" );
+    /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
+        echo "Affected Rows: " . $conn->affected_rows . "<br />";*/           
+    }
+    $conn->close();
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,16 +31,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
-    <link rel="stylesheet" href="/css/jquery.rateyo.css" />
+    <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
     <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
-    <script src="./js/jquery.rateyo.js"></script>
+    <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
     <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
 
     <!--[if lt IE 9]>
 	    <script src="/js/respond.min.js"></script>
 	    <script src="/js/html5shiv-printshiv.js"></script>
 	<![endif]-->
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
@@ -86,9 +147,21 @@
                     the wisdom of the crowds to help them decide where to stay, how to fly, what to do and where to
                     eat. </p>
                     <div class="rateYo"></div>
-                    <form action="" method="get">
-                        <input name="rateBTN" type="submit" value="Rate Now">
-                    </form>
+                    <button id="myBtn">Rate Now</button>
+
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1>Hostel Rating</h1>
+                            <form action="" method="get">
+                                <div class="rateHotel"></div>
+                                <input type="submit" name="submitRating">
+                           </form>
+                        </div>
+                    </div>
                 <a class="view-more-button" href="">View More</a>
             </div>
             <div class="featured-hostel-box">
@@ -155,8 +228,48 @@
             rating: 3.8,
             readOnly: true
         });
-
+        $(".rateHotel").rateYo({
+            rating: 3.8,
+        });
+        
+             $(".rateHotel").rateYo()
+              .on("rateyo.set", function (e, data) {
+                    setCookie("rating",data.rating,1);
+              });
+              function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
     });
+    
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+ 
 </script>
 
 </html>
