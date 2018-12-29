@@ -8,7 +8,7 @@
         $city = sanitizeData($_POST['city']);
         $address = sanitizeData($_POST['address']);
         $pw = randomPassword();
-        $status = 'new';
+        $status = 'de_activated';
        
         $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
         if ($conn->connect_error) {
