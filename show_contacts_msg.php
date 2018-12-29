@@ -1,24 +1,11 @@
 <?php include 'includes/config.php'; 
-    if (isset($_GET['allot'])) {
+    if (isset($_GET['delete'])) {
         $id = sanitizeData($_GET['id']);  
-        $badge = 1; 
-        $update_sql="UPDATE hostels 
-        SET badge='".$badge."' where id='".$id."'";
-        mysqli_query($db,$update_sql);
-        echo 'Successfully alloted the badge!';
-        header('Location: view_all_hostels.php');
+        $status = 'activated'; 
+        $delete_sql="delete from contact where id='".$id."'";
+        $db->query($delete_sql);
+        header('Location: show_contacts_msg.php');
         //header( "refresh:1;url=view_all_hostels.php" );
-    }
-    else if (isset($_GET['remove'])) {
-        $id = sanitizeData($_GET['id']);   
-        $badge = 0;
-        $update_sql="UPDATE hostels 
-        SET badge='".$badge."' where id='".$id."'";
-        mysqli_query($db,$update_sql);
-        echo 'Successfully removed the badge!';
-        header('Location: view_all_hostels.php');
-        //header( "refresh:1;url=view_all_hostels.php" );
-
     }
 ?>
 <!DOCTYPE html>
@@ -116,23 +103,20 @@
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>
-            <h1>View all Hostels!</h1>  
+            <h1>View all Contact Messgaes!</h1>  
                 <div>
                     <?php 
-                    $query = "SELECT * FROM hostels";                    
+                    $query = "SELECT * FROM contact";                    
                     $result = $db->query($query);
                     if (!empty($result)) {
                        ?>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Hostel Name</th>
-                                    <th>Hostel Type</th>
-                                    <th>Hostel City</th>
-                                    <th>Hostel Sector</th>
-                                    <th>Hostel Address</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -141,40 +125,22 @@
                         while ($item = mysqli_fetch_assoc($result)) {
                             ?>
                                 <tr>
-                                <td><?php echo $item['hostel_name'] ?></td>
+                                <td><?php echo $item['name'] ?></td>
                                 
-                                <td><?php echo $item['hostel_type'] ?></td>
+                                <td><?php echo $item['email'] ?></td>
                                 
-                                <td><?php echo $item['hostel_city'] ?></td>
+                                <td><?php echo $item['subject'] ?></td>
                                 
-                                <td><?php echo $item['hostel_sector'] ?></td>
-                                
-                                <td><?php echo $item['hostel_address'] ?></td>
-                                <td>
-                                    <input type="checkbox" id="pb" name="status" value="<?php echo $item['id'] ?>">
-                                    <label for="pb">View Packages</label> 
-                                </td>
-                                <td >
-                                    <input type="checkbox" id="fb" name="status1" value="<?php echo $item['id'] ?>"> 
-                                    <label for="fb">View Features</label> 
-                                </td>
+                                <td><?php echo $item['msg'] ?></td>
+                              
                                 <td>
                                 <form action="#" method="get">
                                 <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
-                                <?php 
-                                    if($item['badge']==0)
-                                    {
-                                        ?><button type="submit" name="allot">Allot Badge</button>
-                                       <?php
-                                    }
-                                    else
-                                    {
-                                       ?><button type="submit" name="remove">Remove Badge</button><?php
-                                    }
-                                ?>
+                                
+                                    <button type="submit" name="delete">Delete</button>
                                 </form>
                                 </td>
-                                </tr>       
+                                </tr>
                             <?php
                         }
                         ?>
@@ -197,21 +163,4 @@
 
     </div>
 </body>
-</html> 
-<script>
-    $(document).ready(function(){
-       //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-       
-       $('input[name=status]').change(function(){
-           $('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-           $('#pfdata').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
-
-       
-       
-       $('input[name=status1]').change(function(){
-           $('#pfdata').load('view_features.php','status1='+$('input[name=status1]:checked').val());
-           $('#pfdata').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
-    });
-</script>
+</html>
