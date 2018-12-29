@@ -86,6 +86,9 @@
                     the wisdom of the crowds to help them decide where to stay, how to fly, what to do and where to
                     eat. </p>
                     <div class="rateYo"></div>
+                    <form action="" method="get">
+                        <input name="rateBTN" type="submit" value="Rate Now">
+                    </form>
                 <a class="view-more-button" href="">View More</a>
             </div>
             <div class="featured-hostel-box">
@@ -149,7 +152,7 @@
     $(function () {
 
         $(".rateYo").rateYo({
-            rating: 3.6,
+            rating: 3.8,
             readOnly: true
         });
 
