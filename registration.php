@@ -19,21 +19,21 @@
 		<br>
 
                 <form action="registration-action.php" method="post" enctype="multipart/form-data">
-                         <div id="name_input">
+                         <div>
 
                         <input type="text" name="username" placeholder="user name" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="email" placeholder="email" required>
                     </div>
 
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="ph" placeholder="Phone Number" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="city" placeholder="City" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <textarea name="address" id="" cols="30" rows="10" placeholder="enter your address.." required></textarea>
                     </div>
                     <div>
@@ -42,7 +42,7 @@
                             <option value="houser">Hostel Owner</option>
                         </select>
                     </div>
-                    <div class="mx-auto text-center"> 
+                    <div> 
                         <label for="">Select Profile Picture</label><br>
                         <input type="file" class="left-30" name="profile">
                     </div>

@@ -11,8 +11,7 @@
     include "includes/header.php";
 ?> 
  <!--   Main Content  -->
-	<?php include 'includes/contact_form.php'; ?>
-  <?php 
+	<?php include 'includes/contact_form.php';
     include "includes/footer.php";
     ?>
 </body>

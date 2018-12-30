@@ -143,8 +143,12 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
-                        <button id="myBtn">Rate Now</button>
-
+                        <?php 
+                            if(isset($_SESSION['email'])||$_SESSION['email']=='user')
+                            {?>
+                                <button class="myBtn">Rate Now</button><?php
+                            }
+                        ?>
                         <a class="view-more-button" href="hostel.php?id=<?php echo $item['id']; ?>">View Details</a>
                     </div>
                 <?php
@@ -198,15 +202,16 @@ if (isset($_GET['submitRating'])) {
     var modal = document.getElementById('myModal');
 
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
+    //var btn = document.getElementByClassName("myBtn");
+    $('.myBtn').click(function(){
+       
+        modal.style.display = "block";
+    }); 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-
+    
     // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
+   
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {

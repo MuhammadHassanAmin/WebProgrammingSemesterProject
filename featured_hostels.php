@@ -125,7 +125,12 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
-                        <button id="myBtn">Rate Now</button>
+                        <?php 
+                            if(isset($_SESSION['email']))
+                            {?>
+                                <button class="myBtn">Rate Now</button><?php
+                            }
+                        ?>
 
                         <a class="view-more-button" href="hostel.php?id=<?php echo $item['id']; ?>">View Details</a>
                     </div>
@@ -134,14 +139,15 @@ if (isset($_GET['submitRating'])) {
             }
             ?>
         </section>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+         <!-- The Modal -->
+         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
                 <form action="" method="get">
                     <div class="rateHotel"></div>
+                    <input type="text" name="id" value="val()">
                     <input type="submit" name="submitRating">
                 </form>
             </div>
@@ -175,19 +181,27 @@ if (isset($_GET['submitRating'])) {
         }
     });
 
-    // Get the modal
-    var modal = document.getElementById('myModal');
+     // Get the modal
+     var modal = document.getElementById('myModal');
 
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
+    //var btn = document.getElementByClassName("myBtn");
+    $('.myBtn').click(function(){
+        $('input[name="id"]').val($('input[name="idd"]').val());
+        modal.style.display = "block";
+    });
+    function val()
+    {
+        return  $('input[name="idd"]').val();
+    }
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal 
-    btn.onclick = function () {
+    /* btn.onclick = function () {
+        $('input[name="id"]').val($('input[name="idd"]').val());
         modal.style.display = "block";
-    }
+    }*/
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {

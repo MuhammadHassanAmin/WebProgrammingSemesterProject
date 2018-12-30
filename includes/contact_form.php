@@ -25,32 +25,17 @@
     			}
     			else{
             	?>
-<<<<<<< HEAD
                 <input name="email" placeholder="Email" required="required" type="email"><?php } ?>
-            </div>
-            <div id="ph_input">
-                <input name="sub" placeholder="Subject" required="required" type="text">
-            </div>
-    		<div id="msg_input">
-                <textarea name="msg" placeholder="your query..." rows="7" required="required"></textarea>
-            </div>
-    		<div id="cbtn">
-                <button type="submit" name="contact_action">Send</button>
-            </div>
-=======
-				<input name="email" placeholder="Email" required="required" type="email">
-				<?php } ?>
-			</div>
-			<div id="ph_input">
-				<input name="sub" placeholder="Subject" required="required" type="text">
-			</div>
-			<div id="msg_input">
-				<textarea name="msg" placeholder="your query..." rows="7" required="required"></textarea>
-			</div>
-			<div id="cbtn">
-				<button type="submit" name="submit">Send</button>
-			</div>
->>>>>>> c5d8a9d273b3bb96ab10fd1f05aa773abacedab2
+				</div>
+				<div id="ph_input">
+					<input name="sub" placeholder="Subject" required="required" type="text">
+				</div>
+				<div id="msg_input">
+					<textarea name="msg" placeholder="your query..." rows="7" required="required"></textarea>
+				</div>
+				<div id="cbtn">
+					<button type="submit" name="contact_action">Send</button>
+				</div>
 		</form>
 		<br>
 	</div>

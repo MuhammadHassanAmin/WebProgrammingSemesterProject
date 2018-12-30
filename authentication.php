@@ -23,10 +23,17 @@
 				$_SESSION['valid'] = true;
 	        	$_SESSION['timeout'] = time();
 				$_SESSION['email'] = $row['email'];
-				$_SESSION['upic'] = $row['picture'];
+				$_SESSION['role'] = $row['role'];
 				$_SESSION['uname'] = $row['name'];
 			}
-			header('Location: ho_dashboard.php');
+			if($_SESSION['role']=='user')
+			{
+				header('Location: main.php');
+			}
+			else if($_SESSION['role']=='houser')
+			{
+				header('Location: dashboard.php');
+			}
 			//header( "refresh:5;url=ho_dashboard.php" );
 		}
 		else
