@@ -103,43 +103,40 @@ if (isset($_GET['submitRating'])) {
         <div class="container">
 
             <!-- Header Logo -->
-            <div class="header__logo">
+        
+            <div class="nav">
+                <div class="nav-header">
+                    <div class="nav-title">
+                    <div class="header__logo">
                 <img src="./graphics/logo.png" alt="logo">
             </div>
-            <nav>
-                <input type="checkbox" id="nav-links">
-                <label for="nav-links"></label>
-                <ul>
-                    <li> <a href="http://hassanamin.website/web3ds/index.php"><span class="fas fa-home"></span> Home</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/about-us.php"><span class="fas fa-info-circle"></span>
-                            About</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/team.php"><span class="fas fa-users"></span> Team</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/portfolio.php"><span class="fas fa-briefcase"></span>
-                            Portfolio</a></li>
-                    <li>
-
-                        <a href="http://hassanamin.website/web3ds/services/index.php"><span class="fas fa-cubes"></span>
-                            Services</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/order.php"><span class="fas fa-cart-arrow-down"></span>
-                            Order</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/contact-us.php"><span class="fas fa-envelope-open-text"></span>
-                            Contact</a></li>
-                    <li><a href="http://hassanamin.website/web3ds/login.php"><span class="fas fa-key"></span> Login</a></li>
-                </ul>
-            </nav>
+                    </div>
+                </div>
+                <div class="nav-btn">
+                    <label for="nav-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <input type="checkbox" id="nav-check">
+                <div class="nav-links">
+                    <a href="//github.io/jo_geek" target="_blank">About</a>
+                    <a href="http://stackoverflow.com/users/4084003/" target="_blank">Contact</a>
+                    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Policy</a>
+                    <a href="https://codepen.io/jo_Geek/" target="_blank">Login</a>
+                    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Register</a>
+                </div>
+            </div>
 
 
-           
+
         </div>
     </header>
     <div class="hd-sep"></div>
     <!--   Main Content  -->
     <main class="main-container">
-        <div class="section-heading">
-            <h2>
-                Find the right Hostel!
-            </h2>
-        </div>
+     
         <section class="main-container main-search-container">
             <div class="blur-layer">
                 <div class="search-bar-container">
