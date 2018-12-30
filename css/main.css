@@ -215,7 +215,7 @@ div#carea {
     width: 100%;
     box-sizing: border-box;
 }
-div#fields input[type="text"],input[type="email"],input[type="password"],textarea {
+div#fields input[type="text"],input[type="email"],input[type="password"],input[type="number"],textarea {
     width: 100% !important;
     margin: 5px 0px;
     height: 50px;
@@ -231,6 +231,9 @@ div#fields  button{
     border-radius: 5px;
     border-style: none;
     padding: 0px 10px;
+}
+div#fields textarea{
+    font-size: 1.2em !important;
 }
 
 div#msg_input {

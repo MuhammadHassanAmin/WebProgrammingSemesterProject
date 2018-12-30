@@ -11,15 +11,25 @@
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>
+          
+
+            <div id="carea">
             <h1>Add Package!</h1>
-            <form action="package_action.php" method="post"> 
-                <div>
-                    <input type="text" name="pname" placeholder="Package name">
-                </div>
-                <div>
-                    <input type="number" min="0" name="pprice" placeholder="Package Price">
-                </div>
-                <div>
+            <div id="fields">
+                <div class="sep"></div>
+                <br>
+
+                <form action="package_action.php.php" method="post">
+                    <div>
+                        <input type="hidden" name="id" value="<?php echo getMemberId($_SESSION['email']) ?>">
+                    </div>
+                    <div id="name_input">
+                    <input type="text" name="pname" placeholder="Package name" required>
+                    </div>
+                    <div id="name_input">
+                    <input type="number" min="0" name="pprice" placeholder="Package Price" required>
+                    </div>
+                    <div>
                     <?php 
                          $member=getMemberId($_SESSION['email']);
                          $query = "SELECT * FROM hostels where owner_id='".$member."'";
@@ -34,14 +44,16 @@
                             </select><?php                         
                         }
                     ?>
-                </div>
-                <div>
+                    <div id="name_input">
                     <textarea name="pdes" placeholder="enter package description.."></textarea>
-                </div>
-                <div>
-                    <button type="submit" name="package_action">Add Package</button>
-                </div>
-            </form> 
+                    </div>
+                    <div id="name_input">
+                        <button type="submit" name="package_action">Add Package</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
         <?php 
             }
             else
