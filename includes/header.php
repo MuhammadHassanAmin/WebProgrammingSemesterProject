@@ -36,12 +36,12 @@
                 </div>
                 <input type="checkbox" id="nav-check">
                 <div class="nav-links">
-                    <a href="<?php $path ?>featured_hostels.php" target="_blank">Featured Hostels</a>
-                    <a href="<?php $path ?>about_us.php" target="_blank">About</a>
-                    <a href="<?php $path ?>contact_us.php" target="_blank">Contact</a>
-                    <a href="<?php $path ?>terms_and_policy.php" target="_blank">Policy</a>
-                    <a href="<?php $path ?>login.php" target="_blank">Login</a>
-                    <a href="<?php $path ?>registration.php" target="_blank">Register</a>
+                    <a href="<?php $path ?>featured_hostels.php" >Featured Hostels</a>
+                    <a href="<?php $path ?>about_us.php" >About</a>
+                    <a href="<?php $path ?>contact_us.php" >Contact</a>
+                    <a href="<?php $path ?>terms_and_policy.php" >Policy</a>
+                    <a href="<?php $path ?>login.php" >Login</a>
+                    <a href="<?php $path ?>registration.php" >Register</a>
                 </div>
             </div>
 
