@@ -72,6 +72,7 @@
     width: 100%;
     background-color: #3a3c3e;
     color: white;
+    z-index: 100;
 }
 
 .social-links-top-header a {
@@ -111,6 +112,8 @@
     display: inline-flex;
     align-items: center;
     vertical-align: top;
+    position: fixed;
+    z-index: 100;
 }
 
 .header__logo {
