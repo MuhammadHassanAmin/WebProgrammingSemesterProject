@@ -24,19 +24,22 @@
                     <div>
                         <input type="hidden" name="id" value="<?php echo getMemberId($_SESSION['email']) ?>">
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hname" placeholder="Hostel name" required>
                     </div>
-                    <div id="name_input">
-                        <input type="text" name="htype" placeholder="Hostel Type" required>
+                    <div>
+                        <select name="htype" id="" required>
+                            <option value="Boys">Boys</option>
+                            <option value="Girls">Girls</option>
+                        </select>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hcity" placeholder="City" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hsector" placeholder="Sector" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <textarea name="haddress" placeholder="Enter Your Address.." required></textarea>
                     </div>
                     <div> 

@@ -132,11 +132,11 @@
                                 <td><?php echo $item['hostel_address'] ?></td>
                                 <td>
                                     <input type="checkbox" id="pb" name="status" value="<?php echo $item['id'] ?>">
-                                    <label for="pb">Packages</label> 
+                                    <button><label for="pb">Packages</label></button>
                                 </td>
                                 <td >
                                     <input type="checkbox" id="fb" name="status1" value="<?php echo $item['id'] ?>"> 
-                                    <label for="fb">Features</label> 
+                                    <button><label for="fb">Features</label></button> 
                                 </td>
                                 <td>
                                     <a href="edit_hostel.php?id=<?php echo $item['id'] ?>">Edit</a>
@@ -172,14 +172,12 @@
        
        $('input[name=status]').change(function(){
            $('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-           $('#pfdata').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+           $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
        });
-
-       
        
        $('input[name=status1]').change(function(){
            $('#pfdata').load('view_features.php','status1='+$('input[name=status1]:checked').val());
-           $('#pfdata').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+           $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
        });
     });
 </script>

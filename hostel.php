@@ -101,6 +101,7 @@
     </style>
 </head>
 <body>
+<?php include 'includes/header.php'; ?>
     <div class="admin-form">
     <?php 
             if (isset($_GET['id'])) {
@@ -148,19 +149,19 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
+    <?php include 'includes/footer.php' ?>
 </body>
 </html> 
 <script>
     $(document).ready(function(){
        //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-       $('#packages').load('view_packages.php','status='+$('input[name=status]').val()+'&mod=view');
-        $('#packages').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        $('#packages').load('view_packages.php','status='+$('input[name=status]').val()+'&mod=view');
+        $('#packages').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         $('#features').load('view_features.php','status1='+$('input[name=status]').val()+'&mod=view');
-        $('#features').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        $('#features').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         $('#gallery').load('view_gallery.php','status2='+$('input[name=status]').val()+'&mod=view');
-        $('#gallery').html("<img src=graphics/loading.gif' alt='Loading Pictures...'>");
+        $('#gallery').html("<img src='graphics/loading.gif' alt='Loading Pictures...'>");
     });
     
 </script>
