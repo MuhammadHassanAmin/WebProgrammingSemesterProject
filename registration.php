@@ -34,7 +34,7 @@
                         <input type="text" name="city" placeholder="City" required>
                     </div>
                     <div id="name_input">
-                        <input type="text" name="address" placeholder="enter your address.." required>
+                        <textarea name="address" id="" cols="30" rows="10" placeholder="enter your address.." required></textarea>
                     </div>
                     <div>
                         <select name="role" id="">
