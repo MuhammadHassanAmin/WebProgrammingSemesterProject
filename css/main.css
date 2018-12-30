@@ -21,6 +21,21 @@
     padding-left: 20px;
     color: #606060;
 }
+.text-left{
+    text-align: left !important;
+}
+.text-center{
+    text-align: center !important;
+}
+.left-30{
+    position: relative;
+    left: 30;
+}
+.mx-auto{
+   margin-left: auto;
+   margin-right: auto;
+
+}
 /*----------------------------------------
     Generic Components
 ----------------------------------------*/
@@ -192,7 +207,7 @@ div#carea {
     width: 100%;
     box-sizing: border-box;
 }
-div#fields input,textarea,button {
+div#fields input[type="text"],input[type="email"],input[type="password"],textarea,button {
     width: 100% !important;
     margin: 5px 0px;
     height: 50px;
