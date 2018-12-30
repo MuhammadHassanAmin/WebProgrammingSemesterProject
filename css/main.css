@@ -1,49 +1,61 @@
-@font-face{
+@font-face {
     font-family: SansProFont;
     src: url(../fonts/SourceSansPro-Regular.otf);
 }
 
-*{
-    margin:0 auto; padding: 0; font-family: SansProFont;
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: SansProFont;
 }
 
-.clear{
+.clear {
     clear: both;
 }
-.sep{
+
+.sep {
     width: 80%;
     margin: 0 auto;
     padding-top: 10px;
     border-bottom: 2px solid #149cc1;
 }
-.page{
+
+.page {
     padding: 5px;
     padding-left: 20px;
     color: #606060;
 }
-.text-left{
+
+.text-left {
     text-align: left !important;
 }
-.text-center{
+
+.text-center {
     text-align: center !important;
 }
-.left-30{
+
+.left-30 {
     position: relative;
     left: 30;
 }
-.mx-auto{
-   margin-left: auto;
-   margin-right: auto;
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
-.d-inline-block{
+
+.d-inline-block {
     display: inline-block;
 }
-.w-5p{
-    width: 5%  !important;
+
+.w-5p {
+    width: 5% !important;
 }
-.w-95p{
+
+.w-95p {
     width: 95% !important;
 }
+
 /*----------------------------------------
     Generic Components
 ----------------------------------------*/
@@ -58,26 +70,32 @@
     background-color: #3a3c3e;
     color: white;
 }
-.social-links-top-header a{ float: right;}
-.social-links-top-header{
+
+.social-links-top-header a {
+    float: right;
+}
+
+.social-links-top-header {
     height: 100%;
     width: 50%;
     float: right;
     padding-right: 5px;
 }
-.social-links-top-header img{
+
+.social-links-top-header img {
     width: 30px;
     display: inline-block;
     height: 30px;
-    margin:  5px 8px;
+    margin: 5px 8px;
 }
+
 /*--------------------
         Header
 --------------------*/
 .header {
     height: 60px;
     margin-top: 40px;
-    box-shadow: 0 1px 0 rgba(12,13,14,0.1),0 1px 6px rgba(59,64,69,0.1);
+    box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1), 0 1px 6px rgba(59, 64, 69, 0.1);
 }
 
 .header .container {
@@ -85,14 +103,17 @@
     justify-content: space-between;
 }
 
-.header .container > * {
+.header .container>* {
     height: 60px;
     display: inline-flex;
     align-items: center;
     vertical-align: top;
 }
 
-.header__logo {height: 59px;width: 60px;}
+.header__logo {
+    height: 59px;
+    width: 60px;
+}
 
 .header__logo img {
     height: 100%;
@@ -107,7 +128,7 @@
     width: 100%;
 }
 
-.header__search-bar input{
+.header__search-bar input {
     border: 1px solid #e2e2e2;
     border-radius: 2px;
     padding-left: 26px;
@@ -115,7 +136,7 @@
     background-color: rgb(244, 244, 244);
     background-size: auto auto;
     background-size: 13px;
-    box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+    box-shadow: inset 0 1px 1px rgba(200, 200, 200, 0.3);
     font-size: 0.94rem;
     height: 30px;
     width: 100%;
@@ -127,55 +148,56 @@
     width: 100%;
     background-color: #4d4d4d;
     position: relative;
-  }
-  
-  .nav > .nav-header {
+}
+
+.nav>.nav-header {
     display: inline;
     height: 100%;
-  }
-  
-  .nav > .nav-header > .nav-title {
+}
+
+.nav>.nav-header>.nav-title {
     display: inline-block;
     font-size: 22px;
     height: 100%;
     color: #fff;
     /* padding: 10px 10px 10px 10px; */
-  }
-  
-  .nav > .nav-btn {
+}
+
+.nav>.nav-btn {
     display: none;
-  }
-  
-  .nav > .nav-links {
+}
+
+.nav>.nav-links {
     display: inline;
     float: right;
     font-size: 18px;
-  }
-  
-  .nav > .nav-links > a {
+}
+
+.nav>.nav-links>a {
     display: inline-block;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
     color: #efefef;
-  }
-  
-  .nav > .nav-links > a:hover {
+}
+
+.nav>.nav-links>a:hover {
     background-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  .nav > #nav-check {
+}
+
+.nav>#nav-check {
     display: none;
-  }
-  
-  @media (max-width:600px) {
-    .nav > .nav-btn {
-      display: inline-block;
-      position: absolute;
-      right: 0px;
-      height: 100%;
-      top: 0px;
+}
+
+@media (max-width:600px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        top: 0px;
     }
-    .nav > .nav-btn > label {
+
+    .nav>.nav-btn>label {
         display: inline-block;
         width: 50px;
         height: 39px;
@@ -183,61 +205,75 @@
         padding-bottom: 0px;
         padding-top: 16px;
     }
-    .nav > .nav-btn > label:hover {
-      background-color: rgba(0, 0, 0, 0.3);
+
+    .nav>.nav-btn>label:hover {
+        background-color: rgba(0, 0, 0, 0.3);
     }
-    .nav > .nav-btn > label > span {
-      display: block;
-      width: 25px;
-      height: 10px;
-      border-top: 2px solid #eee;
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
     }
-    .nav > .nav-links {
-      position: absolute;
-      display: block;
-      width: 100%;
-      background-color: #333;
-      height: 0px;
-      transition: all 0.3s ease-in;
-      overflow-y: hidden;
-      top: 60px;
-      left: 0px;
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 60px;
+        left: 0px;
     }
-    .nav > .nav-links > a {
-      display: block;
-      width: 100%;
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
     }
-    .nav > #nav-check:not(:checked) + .nav-links {
-      height: 0px;
+
+    .nav>#nav-check:not(:checked)+.nav-links {
+        height: 0px;
     }
-    .nav > #nav-check:checked + .nav-links {
-      height: calc(100vh - 300px);
-      overflow-y: auto;
-      z-index: 1;
-      overflow: hidden;
+
+    .nav>#nav-check:checked+.nav-links {
+        height: calc(100vh - 300px);
+        overflow-y: auto;
+        z-index: 1;
+        overflow: hidden;
     }
-  }
+}
+
 /*--------------------
     Section Heading
 --------------------*/
-.section-heading{
+.section-heading {
     text-align: center;
     height: 50px;
     width: 100%;
     background-color: lightgray;
 }
-.section-heading h2{
+
+.section-heading h2 {
     position: relative;
     top: 20%;
 }
+
 /*----------------------------------------
         Main Page Search Bar
 ----------------------------------------*/
-.main-search-container{background:url(../graphics/main-bg.jpg);background-repeat: no-repeat;
-    
+.main-search-container {
+    background: url(../graphics/main-bg.jpg);
+    background-repeat: no-repeat;
+
     height: 315px !important;
-    position: relative;}
-.search-bar-container button{    margin: 0 auto;
+    position: relative;
+}
+
+.search-bar-container button {
+    margin: 0 auto;
     display: block;
     background-color: #00a78d;
     border-style: none;
@@ -250,8 +286,9 @@
     outline: none;
     font-size: 1rem;
 }
-.big-search-bar{
-  
+
+.big-search-bar {
+
     height: 48px;
     padding: 10px;
     margin: 0 auto;
@@ -261,14 +298,17 @@
     border-radius: 10px;
     border-style: none;
 }
-.search-bar-container{
+
+.search-bar-container {
     position: absolute;
     top: 35%;
     /* margin: 0 auto; */
     left: 30%;
     /* display: block; */
 }
-.search-bar-container  select{    display: block;
+
+.search-bar-container select {
+    display: block;
     margin: 0 auto;
     display: block;
     border-style: none;
@@ -279,17 +319,20 @@
     margin-top: 5px;
     position: relative;
     outline: none;
-    font-size: 1rem;}
+    font-size: 1rem;
+}
+
 .blur-layer {
     width: 100%;
     height: 100%;
     /* position: absolute; */
     background-color: #00000026;
 }
+
 /*--------------------
         Main Page
 --------------------*/
-.main-container{
+.main-container {
     width: 100%;
     height: auto;
     display: block;
@@ -300,11 +343,12 @@
 /*----------------------------------------
      Main Page Featured Hostels
 ----------------------------------------*/
-.featured-hostels{
+.featured-hostels {
     width: 90%;
     background-color: #80808036;
 }
-.featured-hostel-box{
+
+.featured-hostel-box {
     width: 100%;
     display: block;
     box-sizing: border-box;
@@ -314,9 +358,11 @@
     /* background-color: red; */
     padding: 5px 0px;
 }
-.featured-hostel-box p{
+
+.featured-hostel-box p {
     padding: 0 20px;
 }
+
 button#myBtn {
     height: auto;
     box-sizing: border-box;
@@ -331,11 +377,13 @@ button#myBtn {
     color: white;
     background-color: #00a78d;
 }
-.featured-hostel-box .hostel-feature-image{
+
+.featured-hostel-box .hostel-feature-image {
     height: 180px;
     width: 80%;
 }
-.featured-hostel-box a.view-more-button{
+
+.featured-hostel-box a.view-more-button {
     height: auto;
     box-sizing: border-box;
     display: block;
@@ -347,6 +395,7 @@ button#myBtn {
     color: white;
     background-color: #00a78d;
 }
+
 /*----------------------------------------
      CONTACT US PAGE
 ----------------------------------------*/
@@ -357,7 +406,12 @@ div#carea {
     width: 100%;
     box-sizing: border-box;
 }
-div#fields input[type="text"],input[type="email"],input[type="password"],input[type="number"],textarea {
+
+div#fields input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
     width: 100% !important;
     margin: 5px 0px;
     height: 50px;
@@ -366,7 +420,7 @@ div#fields input[type="text"],input[type="email"],input[type="password"],input[t
     padding: 0px 10px;
 }
 
-div#fields  button{
+div#fields button {
     width: 100% !important;
     margin: 5px 0px;
     height: 50px;
@@ -374,13 +428,14 @@ div#fields  button{
     border-style: none;
     padding: 0px 10px;
 }
-div#fields textarea{
+
+div#fields textarea {
     font-size: 1.2em !important;
 }
 
 div#msg_input {
     width: 100% !important;
-} 
+}
 
 /*--------------------
         footer
@@ -465,7 +520,7 @@ footer .footer-right input {
     border-color: #0000001a;
 }
 
-footer .footer-right #subscribebtn{
+footer .footer-right #subscribebtn {
     padding: 4px 5px !important;
     border-top-right-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
@@ -475,185 +530,230 @@ footer .footer-right #subscribebtn{
     left: -3px !important;
 }
 
-.social-links-top-footer img{
+.social-links-top-footer img {
     margin-top: 3px;
-width: 30px;
-height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 /* qaisarcss */
-.ser-link{
+.ser-link {
     position: relative;
 }
-.ser-dropdown{
+
+.ser-dropdown {
     display: none;
     position: absolute;
     background: #fefefe;
     min-width: 230px;
     z-index: 19999;
 }
-.ser-link:hover .ser-dropdown{
+
+.ser-link:hover .ser-dropdown {
     display: block;
 }
-.ser-dropdown ul{
+
+.ser-dropdown ul {
     list-style: none;
 }
 
 @media(min-width: 768px) {
-  
-    #mb-logo{
+
+    /* About us  */
+    #abt-title {
+        background-color: #00000057;
+        width: 300px;
+        /* height: 69px; */
+        border-radius: 15px;
+    }
+
+    #abt {
+        width: 80%;
+        padding: 40px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+
+    /* old css */
+    #mb-logo {
         /* float: left; */
         width: 20%;
         display: inline-block;
     }
-    #toggle:not(:checked)+nav{
-     display: inline-block;
-     width: 70%;
-    }
-    #toggle:checked+nav{
-     display: inline-block;
-    }
-  
- 
 
-/*----------------------------------------
+    #toggle:not(:checked)+nav {
+        display: inline-block;
+        width: 70%;
+    }
+
+    #toggle:checked+nav {
+        display: inline-block;
+    }
+
+
+
+    /*----------------------------------------
      CONTACT US PAGE 768
 ----------------------------------------*/
-div#msg_input {
-    width: 50%;
-}
-div#carea { 
-    width:50% !important; 
-    margin: 0 auto;
-}
-/*----------------------------------------
+    div#msg_input {
+        width: 50%;
+    }
+
+    div#carea {
+        width: 50% !important;
+        margin: 0 auto;
+    }
+
+    /*----------------------------------------
         Main Page Search Bar 768
 ----------------------------------------*/
-.main-search-container{
-height: 550px !important;
-}
-.big-search-bar{
-    width: 600px;
+    .main-search-container {
+        height: 550px !important;
+    }
 
-}
+    .big-search-bar {
+        width: 600px;
+
+    }
 
     /*----------------------------------------
      Main Page Featured Hostels 768
 ----------------------------------------*/
-.featured-hostel-box{
-    display: inline-block;
-    width: 33%;
-}
-.modal-content{
-    width: 20% !important;
-    height: 75px;
-}
- /*--------------------
+    .featured-hostel-box {
+        display: inline-block;
+        width: 33%;
+    }
+
+    .modal-content {
+        width: 20% !important;
+        height: 75px;
+    }
+
+    /*--------------------
         footer on 768
 --------------------*/
- 
-
-.footer-left {
-    width: 49%;
-    display: inline-block;
-    margin: 0;
-}
-
-.footer-right {
-    width: 49%;
-    display: inline-block;
-}
 
 
+    .footer-left {
+        width: 49%;
+        display: inline-block;
+        margin: 0;
+    }
 
-.footer-right .vertically-align-center {
-    position: relative;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
+    .footer-right {
+        width: 49%;
+        display: inline-block;
+    }
+
+
+
+    .footer-right .vertically-align-center {
+        position: relative;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
 }
 
 @media(min-width: 1024px) {
 
+    #abt {
+        width: 70% !important;
+        padding: 20px;
+    }
 }
 
 /*
 ------------- Content CSS ---------------------
 */
-main{
+main {
     background: #ddd;
 }
-.admin-form{
+
+.admin-form {
     width: 95%;
-     padding: 10px;
-     border: 1px solid #ccc;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
     text-align: center;
 }
-.admin-form div
-{
+
+.admin-form div {
     padding: 10px;
 }
-.admin-form div button{
+
+.admin-form div button {
     padding: 10px;
     font-size: 1.2em;
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #606060;
 }
-.admin-form div input{
+
+.admin-form div input {
     padding: 10px;
     font-size: 1.2em;
     border: 1px solid #ccc;
     color: #606060;
 }
-.admin-form input{
-     width: 90%;
+
+.admin-form input {
+    width: 90%;
 }
-.admin-form div button:hover{
+
+.admin-form div button:hover {
     color: #222222;
 }
-.conly{
+
+.conly {
     color: red;
 }
-textarea{
+
+textarea {
     width: 90%;
     height: 100px;
 }
+
 /* HTTP Error */
-#http-error-sec{
+#http-error-sec {
     width: 100%;
     text-align: center;
 }
-#http-error-sec h1{
+
+#http-error-sec h1 {
     color: #129cc1;
     font-size: 3em;
 }
-#http-error-sec p{
+
+#http-error-sec p {
     color: #666666;
     font-size: 1.5em;
 }
-#error-banner{
+
+#error-banner {
     width: 100%;
     height: 200px;
 }
-#error-banner img{
+
+#error-banner img {
     width: 100%;
 }
-@media(min-width: 768px)
-{
-    #http-error-sec{
+
+@media(min-width: 768px) {
+    #http-error-sec {
         height: 380px;
     }
-    #error-banner{
+
+    #error-banner {
         width: 60%;
         height: 200px;
     }
-    #error-banner img{
+
+    #error-banner img {
         width: 40%;
     }
 }
@@ -662,24 +762,34 @@ section.dashboard {
     float: left;
     overflow: hidden;
     width: 100%;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-section .dashboard nav,.options{
-    width:100%;
+section .dashboard nav,
+.options {
+    width: 100%;
 }
-.admin-search-bar{float:right; margin-right:50px;}
 
-   .admin-search-bar button  {padding: 0 10px;
-border-radius: 10px;
-outline: none;
-height: 26px;}
+.admin-search-bar {
+    float: right;
+    margin-right: 50px;
+}
+
+.admin-search-bar button {
+    padding: 0 10px;
+    border-radius: 10px;
+    outline: none;
+    height: 26px;
+}
+
 .admin-search-bar input {
     width: 250px;
     padding: 0 10px;
     border-radius: 10px;
     outline: none;
-    height: 25px;}
+    height: 25px;
+}
+
 nav .icon ul {
     box-shadow: 2px 0 8px #000
 }
@@ -716,12 +826,15 @@ nav .options h6 {
     padding-left: 20px;
     margin: 10px 0
 }
+
 .admin-search-bar {
     display: inline-block;
 }
-nav .options ul { 
-    display : inline-block;
+
+nav .options ul {
+    display: inline-block;
 }
+
 nav .options ul li {
     padding: 5px 5px 5px 20px;
     height: 22px
@@ -748,20 +861,29 @@ nav .options .nu {
 
 /* End Navbar */
 /* About us  */
+#abt-title {
+    background-color: #00000057;
+    width: 300px;
+    /* height: 69px; */
+    border-radius: 15px;
+}
+
 #abt {
-    width: 100%;
-    padding: 40px;
+    width: 95%;
+    padding: 20px;
+    text-align: center;
     box-sizing: border-box;
 }
-#about-banner
-{
+
+#about-banner {
     width: 100%;
     height: 350px;
     background-image: url("../graphics/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
-.banner-text{
+
+.banner-text {
     width: 80%;
     text-align: center;
     padding: 10px;
@@ -769,6 +891,23 @@ nav .options .nu {
     color: white;
     font-size: 1em;
 }
+
+#mb-logo {
+    /* float: left; */
+    width: 20%;
+    display: inline-block;
+}
+
+#toggle:not(:checked)+nav {
+    display: inline-block;
+    width: 70%;
+}
+
+#toggle:checked+nav {
+    display: inline-block;
+}
+
+
 
 /*Privacy Policy*/
 
