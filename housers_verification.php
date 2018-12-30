@@ -9,7 +9,7 @@
         header( "refresh:1;url=admindashboard.php" );
     }
     else if (isset($_GET['deact'])) {
-        $id = sanitizeData($_GET['id']);   
+        $id = sanitizeData($_GET['id']);     
         $status = 'de_activated';
         $update_sql="UPDATE houser 
         SET status='".$status."' where id='".$id."'";
