@@ -40,8 +40,8 @@ if (isset($_GET['submitRating'])) {
 	    <script src="/js/respond.min.js"></script>
 	    <script src="/js/html5shiv-printshiv.js"></script>
 	<![endif]-->
-<style>
-/* The Modal (background) */
+    <style>
+        /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -106,28 +106,48 @@ if (isset($_GET['submitRating'])) {
             <div class="header__logo">
                 <img src="./graphics/logo.png" alt="logo">
             </div>
-
-            <!-- Search Bar -->
-            <div class="header__search-bar">
-                <form action="">
-                    <input type="text" value="" placeholder="Search......">
-                </form>
-            </div>
-
-            <!-- Nav -->
-            <nav class="navbar">
+            <nav>
                 <input type="checkbox" id="nav-links">
                 <label for="nav-links"></label>
-                <ul class="navbar__nav">
-                    <li class="navbar__item"><a href="#">Log In</a></li>
-                    <li class="navbar__item"><a href="#">Sign Up</a></li>
+                <ul>
+                    <li> <a href="http://hassanamin.website/web3ds/index.php"><span class="fas fa-home"></span> Home</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/about-us.php"><span class="fas fa-info-circle"></span>
+                            About</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/team.php"><span class="fas fa-users"></span> Team</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/portfolio.php"><span class="fas fa-briefcase"></span>
+                            Portfolio</a></li>
+                    <li>
+
+                        <a href="http://hassanamin.website/web3ds/services/index.php"><span class="fas fa-cubes"></span>
+                            Services</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/order.php"><span class="fas fa-cart-arrow-down"></span>
+                            Order</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/contact-us.php"><span class="fas fa-envelope-open-text"></span>
+                            Contact</a></li>
+                    <li><a href="http://hassanamin.website/web3ds/login.php"><span class="fas fa-key"></span> Login</a></li>
                 </ul>
             </nav>
+
+
+           
         </div>
     </header>
     <div class="hd-sep"></div>
     <!--   Main Content  -->
     <main class="main-container">
+        <div class="section-heading">
+            <h2>
+                Find the right Hostel!
+            </h2>
+        </div>
+        <section class="main-container main-search-container">
+            <div class="blur-layer">
+                <div class="search-bar-container">
+                    <input class="big-search-bar" placeholder="Find the right hostel..." type="text">
+                    <button type="submit">Search!</button>
+                </div>
+            </div>
+        </section>
 
         <div class="section-heading">
             <h2>
@@ -146,22 +166,21 @@ if (isset($_GET['submitRating'])) {
                     travelers with
                     the wisdom of the crowds to help them decide where to stay, how to fly, what to do and where to
                     eat. </p>
-                    <div class="rateYo"></div>
-                    <button id="myBtn">Rate Now</button>
+                <div class="rateYo"></div>
+                <button id="myBtn">Rate Now</button>
 
-
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h1>Hostel Rating</h1>
-                            <form action="" method="get">
-                                <div class="rateHotel"></div>
-                                <input type="submit" name="submitRating">
-                           </form>
-                        </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h1>Hostel Rating</h1>
+                        <form action="" method="get">
+                            <div class="rateHotel"></div>
+                            <input type="submit" name="submitRating">
+                        </form>
                     </div>
+                </div>
                 <a class="view-more-button" href="">View More</a>
             </div>
             <div class="featured-hostel-box">
@@ -172,7 +191,8 @@ if (isset($_GET['submitRating'])) {
                     listings worldwide – covering 8 million accommodations, airlines, experiences, and restaurants --
                     HostelHub provides travelers with the wisdom of the crowds to help them decide where to stay, how
                     to fly, what to do and where to eat.</p>
-                    <div class="rateYo"></div>
+                <div class="rateYo"></div>
+                <button id="myBtn">Rate Now</button>
 
                 <a class="view-more-button" href="">View More</a>
             </div>
@@ -184,8 +204,9 @@ if (isset($_GET['submitRating'])) {
                     listings worldwide – covering 8 million accommodations, airlines, experiences, and restaurants --
                     HostelHub provides travelers with the wisdom of the crowds to help them decide where to stay, how
                     to fly, what to do and where to eat.</p>
-                    <div class="rateYo"></div>
-                    
+                <div class="rateYo"></div>
+                <button id="myBtn">Rate Now</button>
+
                 <a class="view-more-button" href="">View More</a>
             </div>
         </section>
@@ -231,19 +252,20 @@ if (isset($_GET['submitRating'])) {
         $(".rateHotel").rateYo({
             rating: 3.8,
         });
-        
-             $(".rateHotel").rateYo()
-              .on("rateyo.set", function (e, data) {
-                    setCookie("rating",data.rating,1);
-              });
-              function setCookie(cname, cvalue, exdays) {
-                var d = new Date();
-                d.setTime(d.getTime() + (exdays*24*60*60*1000));
-                var expires = "expires="+ d.toUTCString();
-                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-            }
+
+        $(".rateHotel").rateYo()
+            .on("rateyo.set", function (e, data) {
+                setCookie("rating", data.rating, 1);
+            });
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
     });
-    
+
     // Get the modal
     var modal = document.getElementById('myModal');
 
@@ -254,22 +276,21 @@ if (isset($_GET['submitRating'])) {
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-    modal.style.display = "block";
+    btn.onclick = function () {
+        modal.style.display = "block";
     }
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    modal.style.display = "none";
+    span.onclick = function () {
+        modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
-    }
- 
 </script>
 
 </html>
