@@ -4,7 +4,7 @@
 	<div id="fields">
 		<div class="sep"></div>
 		<br>
-		<form method="POST" action="<?php echo $path ?>send_contact.php">
+		<form action="<?php echo $path ?>contact_action.php" method="post">
     		 <div id="name_input">
             	<?php 
 				if (isset($_COOKIE['FullName'])) {?>
@@ -30,7 +30,7 @@
                 <textarea name="msg" placeholder="your query..." rows="7" required="required"></textarea>
             </div>
     		<div id="cbtn">
-                <button type="submit" name="submit">Send</button>
+                <button type="submit" name="contact_action">Send</button>
             </div>
 		</form>
 		<br>

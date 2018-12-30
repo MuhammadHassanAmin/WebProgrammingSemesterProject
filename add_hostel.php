@@ -39,6 +39,10 @@
                     <div id="name_input">
                         <textarea name="haddress" placeholder="Enter Your Address.."></textarea>
                     </div>
+                    <div> 
+                        <label for="">Select Hostel Cover</label><br>
+                        <input type="file" name="profile">
+                    </div>
                     <div>
                         <button type="submit" name="hostel_action">Add Hostel</button>
                     </div>

@@ -329,11 +329,14 @@ button#myBtn {
     display: block;
     padding: 10px;
     margin-top: 5px;
-    width: 100px;
+    width: 110px;
     border-radius: 10px;
     text-decoration: none;
-    color: white;
-    background-color: #00a78d;
+    color: #222222;
+    /* background-color: #00a78d; */
+}
+.featured-hostel-box a.view-more-button:hover{
+    text-decoration: underline;
 }
 /*----------------------------------------
      CONTACT US PAGE

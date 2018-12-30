@@ -86,25 +86,9 @@ if (isset($_GET['submitRating'])) {
    <?php include 'includes/header.php' ?>
     <!--   Main Content  -->
     <main class="main-container">
-     
-        <section class="main-container main-search-container">
-            <div class="blur-layer">
-                <div class="search-bar-container">
-                    <form action="search.php" method="get">
-                        <input class="big-search-bar" type="text" name="keyword" placeholder="Find the right hostel..." type="text">
-                        <select name="type" id="">
-                            <option value="city">By City</option>
-                            <option value="name">By Name</option>
-                        </select>
-                        <button type="submit">Search!</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
         <div class="section-heading">
             <h2>
-                Top Featured Hostels!
+                Featured Hostels
             </h2>
         </div>
         <section class="featured-hostels">
@@ -115,8 +99,6 @@ if (isset($_GET['submitRating'])) {
              $image ="";
              if (!empty($result)) {
                 while ($item = mysqli_fetch_assoc($result)) { 
-                    if($counter<6)
-                    {
                     $counter++;
                 ?>
                     <div class="featured-hostel-box">
@@ -150,7 +132,6 @@ if (isset($_GET['submitRating'])) {
                 <?php
                 }
             }
-            }
             ?>
         </section>
         <!-- The Modal -->
@@ -166,7 +147,7 @@ if (isset($_GET['submitRating'])) {
             </div>
         </div>
     </main>
-    <?php include 'includes/contact_form.php';
+    <?php
         include 'includes/footer.php';
     ?>
 </body>

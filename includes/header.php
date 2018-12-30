@@ -23,8 +23,8 @@
                 <div class="nav-header">
                     <div class="nav-title">
                     <div class="header__logo">
-                <img src="./graphics/logo.png" alt="logo">
-            </div>
+                    <a href="<?php $path;?>"> <img src="./graphics/logo.png" alt="logo"></a>
+                     </div>
                     </div>
                 </div>
                 <div class="nav-btn">
@@ -36,6 +36,7 @@
                 </div>
                 <input type="checkbox" id="nav-check">
                 <div class="nav-links">
+                    <a href="<?php $path ?>featured_hostels.php" target="_blank">Featured Hostels</a>
                     <a href="<?php $path ?>about_us.php" target="_blank">About</a>
                     <a href="<?php $path ?>contact_us.php" target="_blank">Contact</a>
                     <a href="<?php $path ?>terms_and_policy.php" target="_blank">Policy</a>

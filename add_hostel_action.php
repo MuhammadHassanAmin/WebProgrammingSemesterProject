@@ -14,7 +14,6 @@
             trigger_error('Database connection failed: ' .
             $conn->connect_error, E_USER_ERROR);
         }
-
         $sql="INSERT INTO hostels (hostel_name,hostel_type,hostel_city,hostel_sector,hostel_address,owner_id,badge)
              VALUES ('$name','$type','$city','$sector','$address','$id','0')";
         if($conn->query($sql) === false) {
@@ -22,12 +21,10 @@
             ' Error: ' . $conn->error, E_USER_ERROR);
             } else {
             echo "Hostel added successfully<br />";
-            header( "refresh:2;url=ho_dashboard.php" );
+            header( "refresh:2;url=dashboard.php" );
            /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/
-            
+            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/   
         }
-
         $conn->close();
     }
 ?>
