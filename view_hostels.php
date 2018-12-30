@@ -90,9 +90,6 @@
     </style>
 </head>
 <body>
-    <?php
-        include "includes/header.php";
-    ?>
     <div class="admin-form">
     <?php 
             if (isset($_SESSION['email'])) {

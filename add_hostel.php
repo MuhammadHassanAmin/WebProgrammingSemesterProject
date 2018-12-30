@@ -5,11 +5,9 @@
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
+
 </head>
 <body>
-    <?php
-        include "includes/header.php";
-    ?>
     <div class="admin-form">
     <?php 
             if (isset($_SESSION['email'])) {
