@@ -1,25 +1,4 @@
 <?php include 'includes/config.php'; 
-    if (isset($_GET['act'])) {
-        $id = sanitizeData($_GET['id']);  
-        $status = 'activated'; 
-        $update_sql="UPDATE houser
-        SET status='".$badge."' where id='".$id."'";
-        mysqli_query($db,$update_sql);
-        echo 'Successfully alloted the badge!';
-        header('Location: view_all_housers.php');
-        //header( "refresh:1;url=view_all_hostels.php" );
-    }
-    else if (isset($_GET['deact'])) {
-        $id = sanitizeData($_GET['id']);   
-        $status = 'de_activated';
-        $update_sql="UPDATE houser 
-        SET status='".$status."' where id='".$id."'";
-        mysqli_query($db,$update_sql);
-        echo 'Successfully removed the badge!';
-        header('Location: view_all_housers.php');
-        //header( "refresh:1;url=view_all_hostels.php" );
-
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -150,7 +129,7 @@
                                 
                                 <td><?php echo $item['address'] ?></td>
                                 <td>
-                                <form action="#" method="get">
+                                <form action="housers_verification.php" method="get">
                                 <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
                                 <?php 
                                     if($item['status']=="de_activated")
