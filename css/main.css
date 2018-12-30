@@ -622,11 +622,19 @@ nav .options .nu {
     background-size: cover;
     background-attachment: fixed;
 }
-#banner-text{
+.banner-text{
     width: 80%;
     text-align: center;
     padding: 10px;
     padding-top: 100px;
     color: white;
     font-size: 1em;
+}
+
+/*Privacy Policy*/
+
+#privacy-section {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
 }

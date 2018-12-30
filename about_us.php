@@ -12,12 +12,12 @@
 ?> 
  <!--   Main Content  -->
  <div id="about-banner">
-        <div id="banner-text">
+        <div class="banner-text">
         	<h1>About Hostels Hub</h1>
         </div>
 </div>
  <div id="abt">
-	<div id="about-section">
+	<div>
        <p> HostelHub, the world's largest travel site, enables travelers to unleash the full potential of every trip. 
         With 702 million reviews and opinions covering the world's largest selection of travel listings worldwide – 
         covering 8 million accommodations, airlines, experiences, and restaurants -- HostelHub provides travelers with 
