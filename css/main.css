@@ -429,6 +429,12 @@ textarea {
     padding: 0px 10px;
 }
 
+div#fields select{    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    width: 104% !important;}
+
 div#fields button {
     width: 100% !important;
     margin: 5px 0px;
