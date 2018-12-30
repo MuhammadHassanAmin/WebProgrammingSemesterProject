@@ -93,7 +93,7 @@
     ?>
     <div class="admin-form">
     <?php 
-            if (isset($_SESSION['email'])) {
+            if (isset($_SESSION['admin'])) {
                 ?>
             <h1>All Hostels Owners!</h1>  
                 <div>

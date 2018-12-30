@@ -7,7 +7,7 @@
     <?php include 'includes/links.php'; ?>
 </head>
 <body>
-    <div class="admin-form">
+    <div>
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>

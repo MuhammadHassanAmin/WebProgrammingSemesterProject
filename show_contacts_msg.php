@@ -101,7 +101,7 @@
     ?>
     <div class="admin-form">
     <?php 
-            if (isset($_SESSION['email'])) {
+            if (isset($_SESSION['admin'])) {
                 ?>
             <h1>View all Contact Messgaes!</h1>  
                 <div>

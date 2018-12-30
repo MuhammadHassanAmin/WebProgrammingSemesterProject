@@ -9,12 +9,10 @@
 </head>
 
 <body>
-    <div class="admin-form">
+    <div>
         <?php 
             if (isset($_SESSION['email'])) {
                 ?>
-       
-
         <div id="carea">
             <h1>Add Feature!</h1>
             <div id="fields">

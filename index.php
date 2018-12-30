@@ -143,7 +143,6 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
-                        <p class="id"><?php echo $item['id'];?></p>
                         <?php 
                             if(isset($_SESSION['email'])||$_SESSION['email']=='user')
                             {?>

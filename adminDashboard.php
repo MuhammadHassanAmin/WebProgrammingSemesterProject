@@ -28,25 +28,18 @@
             <nav>
                 <section class="options">
                     <p>Dashboard</p>
-                    <h6>FILTERS</h6>
                     <ul>
                         <li id="hh">Hostels</li>
                         <li id="ho">Hostels Owners</li>
                         <li id="uq">Users Queries
-                            <span>32</span>
                         </li>
-
+                        <li><a href="alogout.php">Logout</a></li>
                     </ul>
-                    <div class="admin-search-bar">
-                        <input type="text">
-                        <button type="submit">Search</button>
-                    </div>
-                    <h6>RECENT</h6>
                 </section>
-
             </nav>
         </section>
     </main>
+    <br><br><br><br><br>
     <div id="content">
 
     </div>

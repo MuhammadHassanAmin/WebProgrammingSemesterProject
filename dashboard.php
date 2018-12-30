@@ -27,7 +27,6 @@
               
                 <section class="d-inline-block options w-95p">
                     <p>Dashboard</p>
-                    <h6>FILTERS</h6>
                     <ul>
                         <li id="ah">Add Hostel</li>
                         <li id="ap">Add Packages</li>
@@ -39,7 +38,6 @@
                         <input type="text">
                         <button type="submit">Search</button>
                     </div>
-                    <h6>RECENT</h6>
                 </section>
             </nav>
         </aside>

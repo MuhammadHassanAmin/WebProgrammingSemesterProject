@@ -2,7 +2,13 @@
 	include 'includes/config.php';
 
 	if (isset($_POST['email'])&&isset($_POST['pass'])) {
-
+		if($_POST['email']=="admin@admin.com"&&$_POST['pass']=="admin")
+		{
+			$_SESSION['admin'] = true;
+			header('Location: admindashboard.php');
+		}
+		else
+		{		
 		//$conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
 		$conn=mysqli_connect("localhost","root","","hosteltracker");
         if ($conn->connect_error) {
@@ -46,7 +52,6 @@
 			header( "refresh:1;url=login.php" );
 			
 		}
-		
- 	
- }
+	 }
+}
 ?>
