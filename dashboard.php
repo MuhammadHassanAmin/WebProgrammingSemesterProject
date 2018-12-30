@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
+    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
 
     <!--[if lt IE 9]>
@@ -105,29 +106,6 @@
 </head>
 
 <body>
-    <header>
-        <div id="mb-logo">
-            <h1><a href="/index.php">Hostel Tracker</a></h1>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="/login.php">Login</a>
-                </li>
-                <li>
-                    <a href="/registration.php">Register</a>
-                </li>
-                <li>
-                    <a href="/contact.php">Contact Us</a>
-                </li>
-            </ul>
-
-        </nav>
-
-    </header>
     <div class="hd-sep"></div>
     <!--   Main Content  -->
     <main>
@@ -175,9 +153,26 @@
             
             </nav>
         </aside>
+        <div id="content">
+
+        </div>
     </main>
-
-
 </body>
-
 </html>
+<script>
+    $(document).ready(function(){
+       //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
+       
+       $('input[name=status]').change(function(){
+           $('#content').load('view_packages.php','status='+$('input[name=status]:checked').val());
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+
+       
+       
+       $('input[name=status1]').change(function(){
+           $('#content').load('view_features.php','status1='+$('input[name=status1]:checked').val());
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+    });
+</script>

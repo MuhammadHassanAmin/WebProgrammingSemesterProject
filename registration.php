@@ -12,25 +12,29 @@
     ?>
     <div class="admin-form">
         <h1>Hostel Owner Registration!</h1>
-        <form action="registration-action.php" method="post"> 
+        <form action="registration-action.php" method="post" enctype="multipart/form-data"> 
             <div>
-                <input type="text" name="username" placeholder="user name">
+                <input type="text" name="username" placeholder="user name" required>
             </div>
             <div>
-                <input type="text" name="email" placeholder="email">
+                <input type="text" name="email" placeholder="email" required>
             </div>
             
             <div>
-                <input type="text" name="ph" placeholder="Phone Number">
+                <input type="text" name="ph" placeholder="Phone Number" required>
             </div>
             <div>
-                <input type="text" name="city" placeholder="City">
+                <input type="text" name="city" placeholder="City" required>
             </div>
             <div>
-                <textarea name="address" placeholder="enter your address.."></textarea>
+                <textarea name="address" placeholder="enter your address.." required></textarea>
             </div>
             <div>
-                <button type="submit" name="registration_action">Login</button>
+            <label for="">Select Profile Picture</label>
+                <input type="file" name="profile">
+            </div>
+            <div>
+                <button type="submit" name="registration_action">Register</button>
             </div>
         </form> 
     </div>
