@@ -143,8 +143,14 @@ if (isset($_GET['submitRating'])) {
         <section class="main-container main-search-container">
             <div class="blur-layer">
                 <div class="search-bar-container">
-                    <input class="big-search-bar" placeholder="Find the right hostel..." type="text">
-                    <button type="submit">Search!</button>
+                    <form action="search.php" method="get">
+                        <input class="big-search-bar" type="text" name="keyword" placeholder="Find the right hostel..." type="text">
+                        <select name="type" id="">
+                            <option value="city">By City</option>
+                            <option value="name">By Name</option>
+                        </select>
+                        <button type="submit">Search!</button>
+                    </form>
                 </div>
             </div>
         </section>

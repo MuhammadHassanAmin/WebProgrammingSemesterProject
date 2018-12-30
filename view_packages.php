@@ -1,7 +1,7 @@
 <?php 
 if (isset($_GET['status'])&&isset($_GET['mod'])) {
     ?>
-    <div>
+    <div id="pk">
         <?php 
         sleep(1);
        $hosel_id=$_GET['status'];
@@ -40,7 +40,7 @@ if (isset($_GET['status'])&&isset($_GET['mod'])) {
 }
 else if (isset($_GET['status'])&&!(isset($_GET['mod']))) {
     ?>
-    <div>
+    <div id="pk">
         <?php 
        $hosel_id=$_GET['status'];
        $query = "SELECT * FROM packages where hostel_id='".$hosel_id."'";

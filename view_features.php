@@ -1,7 +1,7 @@
  <?php 
 if (isset($_GET['status1'])&&isset($_GET['mod'])) {
     ?>
-    <div>
+    <div class="ft">
         <?php 
         sleep(1);
         $hosel_id=$_GET['status1'];
@@ -37,7 +37,7 @@ if (isset($_GET['status1'])&&isset($_GET['mod'])) {
 }
 else if (isset($_GET['status1'])&&!(isset($_GET['mod']))) {
     ?>
-    <div>
+    <div class="ft">
         <?php 
         $hosel_id=$_GET['status1'];
         $db=mysqli_connect("localhost","root","","hosteltracker");
