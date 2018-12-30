@@ -1,4 +1,4 @@
-<?php include 'includes/config.php'; 
+<?php include_once 'includes/config.php'; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +93,7 @@
     ?>
     <div class="admin-form">
     <?php 
-            if (isset($_SESSION['admin'])) {
+            if (isset($_SESSION['email'])) {
                 ?>
             <h1>View all Hostels!</h1>  
                 <div>

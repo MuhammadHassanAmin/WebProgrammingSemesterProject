@@ -1,4 +1,9 @@
-<?php include 'includes/config.php';  ?>
+<?php include 'includes/config.php'; 
+    if(!(isset($_SESSION['email'])&&$_SESSION['role']=="admin"))
+    {
+        header('Location: login.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -40,7 +45,7 @@
     </main>
     <br><br><br><br><br>
     <div id="content">
-
+     <?php include 'view_all_hostels.php'; ?>
     </div>
     <?php include 'includes/footer.php';  ?>
 

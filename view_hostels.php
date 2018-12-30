@@ -1,4 +1,4 @@
-<?php include 'includes/config.php';  ?>
+<?php include_once 'includes/config.php';  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +90,8 @@
     </style>
 </head>
 <body>
-    <div>
+    <br><br><br>
+    <div class="admin-form">
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>
@@ -167,7 +168,7 @@
 </html> 
 <script>
     $(document).ready(function(){
-       //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
+       //$('#pfdata').load('view_hostels.php','status='+$('input[name=status]:checked').val());
        
        $('input[name=status]').change(function(){
            $('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());

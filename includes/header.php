@@ -23,7 +23,7 @@
                 <div class="nav-header">
                     <div class="nav-title">
                     <div class="header__logo">
-                    <a href="<?php $path;?>"> <img src="./graphics/logo.png" alt="logo"></a>
+                    <a href="<?php $path;?>index.php"> <img src="./graphics/logo.png" alt="logo"></a>
                      </div>
                     </div>
                 </div>

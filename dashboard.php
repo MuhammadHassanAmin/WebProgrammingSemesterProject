@@ -1,4 +1,9 @@
-<?php include 'includes/config.php';  ?>
+<?php include 'includes/config.php'; 
+     if(!(isset($_SESSION['email'])&&$_SESSION['role']=="houser"))
+     {
+         header('Location: login.php');
+     }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +44,7 @@
         </aside>
         <article>
             <div id="content">
-
+                <?php include 'view_hostels.php'; ?>
             </div>
         </article>
     </main>
