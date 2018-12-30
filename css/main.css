@@ -92,8 +92,7 @@
     vertical-align: top;
 }
 
-.header__logo {
-}
+.header__logo {height: 59px;width: 60px;}
 
 .header__logo img {
     height: 100%;
@@ -132,13 +131,15 @@
   
   .nav > .nav-header {
     display: inline;
+    height: 100%;
   }
   
   .nav > .nav-header > .nav-title {
     display: inline-block;
     font-size: 22px;
+    height: 100%;
     color: #fff;
-    padding: 10px 10px 10px 10px;
+    /* padding: 10px 10px 10px 10px; */
   }
   
   .nav > .nav-btn {
