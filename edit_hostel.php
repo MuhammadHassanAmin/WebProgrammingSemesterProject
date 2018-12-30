@@ -68,23 +68,23 @@ else if (isset($_GET['deleteh'])) {
             <h1>Edit Hostel!</h1>
             <form action="#" method="get"> 
                 <div>
-                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>">
+                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="hname" value="<?php echo $product_array['hostel_name'] ?>">
+                    <input type="text" name="hname" value="<?php echo $product_array['hostel_name'] ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="htype" value="<?php echo $product_array['hostel_type'] ?>">
+                    <input type="text" name="htype" value="<?php echo $product_array['hostel_type'] ?>" required>
                 </div>
                 
                 <div>
-                    <input type="text" name="hcity" value="<?php echo $product_array['hostel_city'] ?>">
+                    <input type="text" name="hcity" value="<?php echo $product_array['hostel_city'] ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="hsector" value="<?php echo $product_array['hostel_sector'] ?>">
+                    <input type="text" name="hsector" value="<?php echo $product_array['hostel_sector'] ?>" required>
                 </div>
                 <div>
-                    <textarea name="haddress"><?php echo $product_array['hostel_address'] ?></textarea>
+                    <textarea name="haddress" required><?php echo $product_array['hostel_address'] ?></textarea>
                 </div>
                 <div>
                     <button type="submit" name="updateh">Update Hostel</button>

@@ -59,17 +59,17 @@ else if (isset($_GET['deletep'])) {
             <h1>Add Package!</h1>
             <form action="#" method="get"> 
                  <div>
-                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>">
+                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="pname" value="<?php echo $product_array['pack_name'] ?>">
+                    <input type="text" name="pname" value="<?php echo $product_array['pack_name'] ?>" required>
                 </div>
                 <div>
-                    <input type="number" min="0" name="pprice" value="<?php echo $product_array['pack_price'] ?>">
+                    <input type="number" min="0" name="pprice" value="<?php echo $product_array['pack_price'] ?>" required>
                 </div>
               
                 <div>
-                    <textarea name="pdes"><?php echo $product_array['pack_des'] ?></textarea>
+                    <textarea name="pdes" required><?php echo $product_array['pack_des'] ?></textarea>
                 </div>
                 <div>
                     <button type="submit" name="updatep">Update Package</button>

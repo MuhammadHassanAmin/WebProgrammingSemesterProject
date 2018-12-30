@@ -47,7 +47,7 @@
                     </div>
                     
                     <div id="name_input">
-                    <textarea name="pdes" placeholder="enter package description.."></textarea>
+                    <textarea name="pdes" placeholder="enter package description.." required></textarea>
                     </div>
                     <div id="name_input">
                         <button type="submit" name="package_action">Add Package</button>

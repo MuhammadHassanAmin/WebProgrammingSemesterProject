@@ -37,7 +37,7 @@
                         <input type="text" name="hsector" placeholder="Sector" required>
                     </div>
                     <div id="name_input">
-                        <textarea name="haddress" placeholder="Enter Your Address.."></textarea>
+                        <textarea name="haddress" placeholder="Enter Your Address.." required></textarea>
                     </div>
                     <div> 
                         <label for="">Select Hostel Cover</label><br>

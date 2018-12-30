@@ -27,7 +27,7 @@
                          $result = $db->query($query);
                          if (!empty($result)) {
                              ?>
-                        <select name="hostel_id">
+                        <select name="hostel_id" required>
                             <?php
                                 while ($item = mysqli_fetch_assoc($result)) {?>
                             <option value="<?php echo $item['id'] ?>">
@@ -40,10 +40,10 @@
                     ?>
                     </div>
                     <div>
-                        <input type="text" name="fname" placeholder="Feature name">
+                        <input type="text" name="fname" placeholder="Feature name" required>
                     </div>
                     <div id="name_input">
-                        <textarea name="fdes" placeholder="enter feature description.."></textarea>
+                        <textarea name="fdes" placeholder="enter feature description.." required></textarea>
                     </div>
                     <div id="name_input">
                         <button type="submit" name="feature_action">Add Feature</button>
