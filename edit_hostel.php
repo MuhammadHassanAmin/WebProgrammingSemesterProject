@@ -20,7 +20,7 @@ if (isset($_GET['updateh'])) {
         </style>
     <?php
     echo 'Successfully updated the hostel!';
-    header( "refresh:2;url=view_hostels.php" );
+    header( "refresh:2;url=dashboard.php" );
 }
 else if (isset($_GET['deleteh'])) {
     $id = sanitizeData($_GET['id']);   
@@ -90,7 +90,7 @@ else if (isset($_GET['deleteh'])) {
                     <button type="submit" name="updateh">Update Hostel</button>
                 </div>
                 <div>
-                    <button type="submit" name="deleteh">Update Hostel</button>
+                    <button type="submit" name="deleteh">Delete Hostel</button>
                 </div>
             </form> 
         <?php 
