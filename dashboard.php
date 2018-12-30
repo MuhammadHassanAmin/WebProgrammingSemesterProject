@@ -1,6 +1,7 @@
 <?php include 'includes/config.php';  ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
@@ -115,7 +116,7 @@
     <main>
         <aside>
             <nav>
-                <section class="icon">
+                <section class="d-inline-block icon w-5p">
                     <ul>
                         <li>
                             <img width="20" height="20" src="https://static.thenounproject.com/png/14173-200.png" alt="">
@@ -136,7 +137,7 @@
                         <hr>
                     </ul>
                 </section>
-                <section class="options">
+                <section class="d-inline-block options w-95p">
                     <p>Dashboard</p>
                     <h6>FILTERS</h6>
                     <ul>
@@ -146,43 +147,44 @@
                         <li id="vah">View All Hostels</li>
                     </ul>
                     <div class="admin-search-bar">
-                    <input type="text">
-                    <button type="submit">Search</button>
-                </div>
+                        <input type="text">
+                        <button type="submit">Search</button>
+                    </div>
                     <h6>RECENT</h6>
-                </section>   
+                </section>
             </nav>
         </aside>
         <article>
-        <div id="content">
+            <div id="content">
 
-        </div>
+            </div>
         </article>
     </main>
     <footer>
-         <?php include 'includes/footer.php' ?>
+        <?php include 'includes/footer.php' ?>
     </footer>
 </body>
+
 </html>
 <script>
-    $(document).ready(function(){
-       //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-       
-       $('#ah').click(function(){
-           $('#content').load('add_hostel.php','status=view');
-           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
-       $('#ap').click(function(){
-           $('#content').load('add_package.php','status=view');
-           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
-       $('#af').click(function(){
-           $('#content').load('add_feature.php','status=view');
-           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
-       $('#vah').click(function(){
-           $('#content').load('view_hostels.php','status=view');
-           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
-       });
+    $(document).ready(function () {
+        //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
+
+        $('#ah').click(function () {
+            $('#content').load('add_hostel.php', 'status=view');
+            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        });
+        $('#ap').click(function () {
+            $('#content').load('add_package.php', 'status=view');
+            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        });
+        $('#af').click(function () {
+            $('#content').load('add_feature.php', 'status=view');
+            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        });
+        $('#vah').click(function () {
+            $('#content').load('view_hostels.php', 'status=view');
+            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+        });
     });
 </script>

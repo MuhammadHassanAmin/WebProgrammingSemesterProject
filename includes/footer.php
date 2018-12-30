@@ -19,12 +19,12 @@
      </div>
             <p>All Rights Reserved with Hostel Hub <br> Copyright Protected©2018</p>
         </div>
-        <div class="footer-right">
+        <span class="footer-right">
             <div class="vertically-align-center">
                 <h3>SUBSCRIBE</h3>
                 <h4>To Get Latest Discount Offers!</h4>
                 <input type="text">
-                <button type="submit">SUBSCRIBE NOW!</button>
+                <button id="subscribebtn" type="submit">SUBSCRIBE NOW!</button>
             </div>
         </div>
     </footer>

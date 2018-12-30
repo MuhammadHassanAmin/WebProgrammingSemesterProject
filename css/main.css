@@ -34,7 +34,15 @@
 .mx-auto{
    margin-left: auto;
    margin-right: auto;
-
+}
+.d-inline-block{
+    display: inline-block;
+}
+.w-5p{
+    width: 5%  !important;
+}
+.w-95p{
+    width: 95% !important;
 }
 /*----------------------------------------
     Generic Components
@@ -207,7 +215,7 @@ div#carea {
     width: 100%;
     box-sizing: border-box;
 }
-div#fields input[type="text"],input[type="email"],input[type="password"],textarea,button {
+div#fields input[type="text"],input[type="email"],input[type="password"],textarea {
     width: 100% !important;
     margin: 5px 0px;
     height: 50px;
@@ -215,6 +223,16 @@ div#fields input[type="text"],input[type="email"],input[type="password"],textare
     border-style: none;
     padding: 0px 10px;
 }
+
+div#fields  button{
+    width: 100% !important;
+    margin: 5px 0px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 0px 10px;
+}
+
 div#msg_input {
     width: 100% !important;
 } 
@@ -302,17 +320,16 @@ footer .footer-right input {
     border-color: #0000001a;
 }
 
-footer .footer-right button[type="submit"]{
-    padding: 4px 5px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    outline: 0;
-    border-style: none;
-    position: relative;
-    left: -3px;
+footer .footer-right #subscribebtn{
+    padding: 4px 5px !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    outline: 0 !important;
+    border-style: none !important;
+    position: relative !important;
+    left: -3px !important;
 }
 
-button {}
 .social-links-top-footer img{
     margin-top: 3px;
 width: 30px;
