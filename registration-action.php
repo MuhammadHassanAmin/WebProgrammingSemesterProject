@@ -7,9 +7,16 @@
         $ph = sanitizeData($_POST['ph']);
         $city = sanitizeData($_POST['city']);
         $address = sanitizeData($_POST['address']);
+        $role = sanitizeData($_POST['role']);
         $pw = randomPassword();
         $status = 'de_activated';
-       
+        if(checkEmail($email)==$email)
+        {
+            echo 'Email already exits!';
+            header( "refresh:1;url=registration.php" );
+        }
+        else
+        {
         $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
         if ($conn->connect_error) {
             trigger_error('Database connection failed: ' .
@@ -32,8 +39,8 @@
                     if (file_exists("junk/" . $_FILES["profile"]["name"]))
                         {
                             echo $_FILES["profile"]["name"] . " already exists. ";
-                            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass)
-                            VALUES ('$username','$email','$ph','$city','$address','$status','$pw')";
+                            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,role)
+                            VALUES ('$username','$email','$ph','$city','$address','$status','$pw','$role')";
                         }
                     else
                         {
@@ -44,8 +51,8 @@
                             $ext = pathinfo($pic, PATHINFO_EXTENSION);
                             $save_picture = 'profile'.microtime().'.'.$ext;
                             rename('junk/'.$pic,'junk/'.$save_picture);
-                            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,picture)
-                             VALUES ('$username','$email','$ph','$city','$address','$status','$pw','$save_picture')";
+                            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,picture,role)
+                             VALUES ('$username','$email','$ph','$city','$address','$status','$pw','$save_picture','$role')";
                         }
                 }
             }
@@ -57,8 +64,8 @@
         }
         else
         {
-            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,picture)
-             VALUES ('$username','$email','$ph','$city','$address','$status','$pw','nopic')";
+            $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,picture,role)
+             VALUES ('$username','$email','$ph','$city','$address','$status','$pw','nopic','$role')";
         }
         if($conn->query($sql) === false) {
             trigger_error('Wrong SQL: ' . $sql .
@@ -72,6 +79,7 @@
         }
 
         $conn->close();
+        }
     }
     function randomPassword() {
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -83,5 +91,12 @@
         }
         return implode($pass); //turn the array into a string
     }
- 
+    function checkEmail($email)
+	{
+		$db=mysqli_connect("localhost","root","","hosteltracker");
+        $sql="select email from houser where email='".$email."';";
+        $result = mysqli_query($db,$sql);
+        $product_array = mysqli_fetch_assoc($result);
+        return $product_array['email'];
+	}
 ?>

@@ -36,6 +36,12 @@
                     <div id="name_input">
                         <input type="text" name="address" placeholder="enter your address.." required>
                     </div>
+                    <div>
+                        <select name="role" id="">
+                            <option value="user">Public User</option>
+                            <option value="houser">Hostel Owner</option>
+                        </select>
+                    </div>
                     <div class="mx-auto text-center"> 
                         <label for="">Select Profile Picture</label><br>
                         <input type="file" class="left-30" name="profile">
