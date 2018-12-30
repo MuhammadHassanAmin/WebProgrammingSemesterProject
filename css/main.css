@@ -848,7 +848,8 @@ nav .options ul {
 
 nav .options ul li {
     padding: 5px 5px 5px 20px;
-    height: 22px
+    height: 22px;
+    display: inline-flex;
 }
 
 nav .options ul li:hover {
