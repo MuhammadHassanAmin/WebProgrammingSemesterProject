@@ -684,4 +684,33 @@ nav .options .nu {
 }
 
 /* End Navbar */
+/* About us  */
+#abt {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+#about-banner
+{
+    width: 100%;
+    height: 350px;
+    background-image: url("../graphics/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.banner-text{
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    padding-top: 100px;
+    color: white;
+    font-size: 1em;
+}
 
+/*Privacy Policy*/
+
+#privacy-section {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}

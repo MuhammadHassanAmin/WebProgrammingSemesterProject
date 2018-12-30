@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-   // include "includes/header.php";
+    include "includes/header.php";
 ?> 
  <!--   Main Content  -->
  <div>
@@ -52,7 +52,7 @@
 </div>
  </div>
   <?php 
-   // include "includes/footer.php";
+    include "includes/footer.php";
     ?>
 </body>
 </html>

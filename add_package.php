@@ -21,6 +21,22 @@
 
                 <form action="package_action.php.php" method="post">
                     <div>
+                        <?php 
+                            $member=getMemberId($_SESSION['email']);
+                            $query = "SELECT * FROM hostels where owner_id='".$member."'";
+                            $result = $db->query($query);
+                            if (!empty($result)) {
+                                ?>
+                                <select name="hostel_id">
+                                <?php
+                                    while ($item = mysqli_fetch_assoc($result)) {?>
+                                    <option value="<?php echo $item['id'] ?>"><?php echo $item['hostel_name'] ?></option>
+                                    <?php } ?>               
+                                </select><?php                         
+                            }
+                        ?>
+                    </div>
+                    <div>
                         <input type="hidden" name="id" value="<?php echo getMemberId($_SESSION['email']) ?>">
                     </div>
                     <div id="name_input">
@@ -29,21 +45,7 @@
                     <div id="name_input">
                     <input type="number" min="0" name="pprice" placeholder="Package Price" required>
                     </div>
-                    <div>
-                    <?php 
-                         $member=getMemberId($_SESSION['email']);
-                         $query = "SELECT * FROM hostels where owner_id='".$member."'";
-                         $result = $db->query($query);
-                         if (!empty($result)) {
-                             ?>
-                             <select name="hostel_id">
-                             <?php
-                                while ($item = mysqli_fetch_assoc($result)) {?>
-                                <option value="<?php echo $item['id'] ?>"><?php echo $item['hostel_name'] ?></option>
-                                <?php } ?>               
-                            </select><?php                         
-                        }
-                    ?>
+                    
                     <div id="name_input">
                     <textarea name="pdes" placeholder="enter package description.."></textarea>
                     </div>
