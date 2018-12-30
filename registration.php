@@ -47,6 +47,9 @@
                         <input type="file" class="left-30" name="profile">
                     </div>
                     <div>
+                        <input type="password" name="pass" placeholder="****" required>
+                    </div>
+                    <div>
                         <button type="submit" name="registration_action">Register</button>
                     </div>
                 </form>

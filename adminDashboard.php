@@ -21,7 +21,6 @@
 
 <body>
    <?php include("includes/header.php")?>
-
     <!--   Main Content  -->
     <main>
         <section class="dashboard">

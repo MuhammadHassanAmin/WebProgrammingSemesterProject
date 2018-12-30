@@ -34,10 +34,6 @@
                         <li id="ag">Add Gallery</li>
                         <li id="vah">View All Hostels</li>
                     </ul>
-                    <div class="admin-search-bar">
-                        <input type="text">
-                        <button type="submit">Search</button>
-                    </div>
                 </section>
             </nav>
         </aside>

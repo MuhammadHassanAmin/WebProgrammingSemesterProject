@@ -144,7 +144,7 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
                         <?php 
-                            if(isset($_SESSION['email'])||$_SESSION['email']=='user')
+                            if(isset($_SESSION['email'])&&$_SESSION['role']=='user')
                             {?>
                                 <button class="myBtn">Rate Now</button><?php
                             }

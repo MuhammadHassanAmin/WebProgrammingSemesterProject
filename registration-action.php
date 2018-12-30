@@ -8,7 +8,7 @@
         $city = sanitizeData($_POST['city']);
         $address = sanitizeData($_POST['address']);
         $role = sanitizeData($_POST['role']);
-        $pw = randomPassword();
+        $pw = sanitizeData($_POST['pass']);
         $status = 'de_activated';
         if(checkEmail($email)==$email)
         {
@@ -36,7 +36,7 @@
                 }
                 else
                 {
-                    if (file_exists("junk/" . $_FILES["profile"]["name"]))
+                    if (file_exists("graphics/" . $_FILES["profile"]["name"]))
                         {
                             echo $_FILES["profile"]["name"] . " already exists. ";
                             $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,role)
@@ -45,12 +45,12 @@
                     else
                         {
                             move_uploaded_file($_FILES["profile"]["tmp_name"],
-                            "junk/" . $_FILES["profile"]["name"]);
-                            echo "Stored in: " . "junk/" . $_FILES["profile"]["name"];
+                            "graphics/" . $_FILES["profile"]["name"]);
+                            echo "Stored in: " . "graphics/" . $_FILES["profile"]["name"];
                             $pic = $_FILES["profile"]["name"];
                             $ext = pathinfo($pic, PATHINFO_EXTENSION);
                             $save_picture = 'profile'.microtime().'.'.$ext;
-                            rename('junk/'.$pic,'junk/'.$save_picture);
+                            rename('graphics/'.$pic,'graphics/'.$save_picture);
                             $sql="INSERT INTO houser (name,email,ph,city,address,status,pass,picture,role)
                              VALUES ('$username','$email','$ph','$city','$address','$status','$pw','$save_picture','$role')";
                         }

@@ -35,18 +35,18 @@ if (isset($_POST['addgallery'])) {
                 echo "Size: " . ($_FILES["userfile"]["size"][$i] / 1024) . " Kb<br />";
                 echo "Temp file: " . $_FILES["userfile"]["tmp_name"][$i] . "<br />";*/
         
-                if (file_exists("junk/" . $_FILES["userfile"]["name"][$i]))
+                if (file_exists("graphics/" . $_FILES["userfile"]["name"][$i]))
                     {
                         echo $_FILES["userfile"]["name"][$i] . " already exists. ";
                     }
                 else
                     {
                         move_uploaded_file($_FILES["userfile"]["tmp_name"][$i],
-                        "junk/" . $_FILES["userfile"]["name"][$i]);
+                        "graphics/" . $_FILES["userfile"]["name"][$i]);
                         $picture = $_FILES["userfile"]["name"][$i];
                         $ext = pathinfo($picture, PATHINFO_EXTENSION);
                         $save_picture = 'image'.microtime().'.'.$ext;
-                        rename('junk/'.$picture,'junk/'.$save_picture);
+                        rename('graphics/'.$picture,'graphics/'.$save_picture);
                         $sql="INSERT INTO gallery (hostel_id,picture) 
                         Values('$hostel_id','$save_picture')";
                         mysqli_query($db,$sql);                   
