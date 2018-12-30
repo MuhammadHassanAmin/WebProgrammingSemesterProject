@@ -10,19 +10,24 @@
     <?php
         include "includes/header.php";
     ?>
-    <div class="admin-form">
-        <h1>Admin Login</h1>
-        <form action="authentication.php" method="post"> 
-            <div>
+    <div id="carea">
+	<h1>Login</h1>
+	<div id="fields">
+		<div class="sep"></div>
+		<br>
+		<form action="authentication.php" method="post"> 
+    		 <div id="name_input">
                 <input type="text" name="email" placeholder="user name">
-            </div>
-            <div>
-                <input type="password" name="pass" placeholder="*******">
-            </div>
-            <div>
+            <div id="email_input">
+            <input type="password" name="pass" placeholder="*******">
+            
+    		<div id="cbtn">
                 <button type="submit" name="submit">Login</button>
             </div>
-        </form> 
-    </div>
+		</form>
+		<br>
+	</div>
+</div>
+ 
 </body>
 </html>

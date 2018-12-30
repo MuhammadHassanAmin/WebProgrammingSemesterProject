@@ -182,7 +182,27 @@ header nav ul {
     border-radius: 10px;
     background-color: #ccc;
 }
-
+/*----------------------------------------
+     CONTACT US PAGE
+----------------------------------------*/
+div#carea {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+div#fields input,textarea,button {
+    width: 100% !important;
+    margin: 5px 0px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 0px 10px;
+}
+div#msg_input {
+    width: 100% !important;
+} 
 
 /*--------------------
         footer
@@ -318,7 +338,6 @@ height: 30px;
         /* float: left; */
         width: 20%;
         display: inline-block;
-        height: 100%;
     }
     #toggle:not(:checked)+nav{
      display: inline-block;
@@ -332,6 +351,17 @@ height: 30px;
        display: inline-block;
       margin: 0 5px;
     }
+
+/*----------------------------------------
+     CONTACT US PAGE
+----------------------------------------*/
+div#msg_input {
+    width: 50%;
+}
+div#carea { 
+    width:50% !important; 
+    margin: 0 auto;
+}
 
     /*----------------------------------------
      Main Page Featured Hostels
