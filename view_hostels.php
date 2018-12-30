@@ -84,6 +84,9 @@
             color:red;
             cursor:pointer;
         }
+        input{
+            display:none;
+        }
     </style>
 </head>
 <body>

@@ -150,9 +150,6 @@
                     }
                     ?>
                 </div>
-                <div id="pfdata">
-                    <?php include 'view_packages.php' ?>
-                </div>
         <?php 
             }
             else

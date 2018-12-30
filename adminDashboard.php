@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
+    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
 
     <!--[if lt IE 9]>
@@ -166,13 +167,9 @@
                     <p>Dashboard</p>
                     <h6>FILTERS</h6>
                     <ul>
-                        <li>Users</li>
-                        <li>Hostels</li>
-                        <li>Hostels Owners</li>
-                        <li>New Hostels
-                            <span>32</span>
-                        </li>
-                        <li>New Hostels Owners
+                        <li id="hh">Hostels</li>
+                        <li id="ho">Hostels Owners</li>
+                        <li id="uq">Users Queries
                             <span>32</span>
                         </li>
 
@@ -187,7 +184,9 @@
             </nav>
         </section>
     </main>
+    <div id="content">
 
+    </div>
     <footer>
         <div class="footer-left">
             <h3>Hostel Hub</h3>
@@ -220,3 +219,20 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function(){
+       
+       $('#hh').click(function(){
+           $('#content').load('view_all_hostels.php','status=view');
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+       $('#ho').click(function(){
+           $('#content').load('view_all_housers.php','status=view');
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+       $('#uq').click(function(){
+           $('#content').load('show_contacts_msg.php','status=view');
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+    });
+</script>

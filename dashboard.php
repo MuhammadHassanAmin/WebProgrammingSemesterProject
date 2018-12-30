@@ -102,11 +102,15 @@
         }
 
         /* End Navbar */
+        #content{
+            width:100%;
+            height:auto;
+        }
     </style>
 </head>
 
 <body>
-    <div class="hd-sep"></div>
+    <?php include 'includes/header.php' ?>
     <!--   Main Content  -->
     <main>
         <aside>
@@ -136,42 +140,48 @@
                     <p>Dashboard</p>
                     <h6>FILTERS</h6>
                     <ul>
-                        <li>Add Hostel</li>
-                        <li>Add Packages</li>
-                        <li>Add Features</li>
-                        <li>View All Hostels</li>
-                        <li>Booking Requests
-                            <span>32</span>
-                        </li>
+                        <li id="ah">Add Hostel</li>
+                        <li id="ap">Add Packages</li>
+                        <li id="af">Add Features</li>
+                        <li id="vah">View All Hostels</li>
                     </ul>
                     <div class="admin-search-bar">
                     <input type="text">
                     <button type="submit">Search</button>
                 </div>
                     <h6>RECENT</h6>
-                </section>
-            
+                </section>   
             </nav>
         </aside>
+        <article>
         <div id="content">
 
         </div>
+        </article>
     </main>
+    <footer>
+         <?php include 'includes/footer.php' ?>
+    </footer>
 </body>
 </html>
 <script>
     $(document).ready(function(){
        //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
        
-       $('input[name=status]').change(function(){
-           $('#content').load('view_packages.php','status='+$('input[name=status]:checked').val());
+       $('#ah').click(function(){
+           $('#content').load('add_hostel.php','status=view');
            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
        });
-
-       
-       
-       $('input[name=status1]').change(function(){
-           $('#content').load('view_features.php','status1='+$('input[name=status1]:checked').val());
+       $('#ap').click(function(){
+           $('#content').load('add_package.php','status=view');
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+       $('#af').click(function(){
+           $('#content').load('add_feature.php','status=view');
+           $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+       });
+       $('#vah').click(function(){
+           $('#content').load('view_hostels.php','status=view');
            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
        });
     });
