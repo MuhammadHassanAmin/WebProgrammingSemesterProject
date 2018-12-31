@@ -1,4 +1,4 @@
-ErrorDocument 400 http://localhost/WEB_Project_1/http_error.php
-ErrorDocument 401 http://localhost/WEB_Project_1/http_error.php
-ErrorDocument 404 http://localhost/WEB_Project_1/http_error.php
-ErrorDocument 500 http://localhost/WEB_Project_1/http_error.php
+ErrorDocument 400 http://localhost/repo/WebProgrammingSemesterProject/http_error.php
+ErrorDocument 401 http://localhost/repo/WebProgrammingSemesterProject/http_error.php
+ErrorDocument 404 http://localhost/repo/WebProgrammingSemesterProject/http_error.php
+ErrorDocument 500 http://localhost/repo/WebProgrammingSemesterProject/http_error.php

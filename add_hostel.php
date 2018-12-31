@@ -4,13 +4,10 @@
 
 <head>
     <title>Hostel Tracker</title>
-    <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
-
 </head>
-
 <body>
-    <div class="admin-form">
+    <div>
         <?php 
             if (isset($_SESSION['email'])) {
                 ?>
@@ -24,20 +21,23 @@
                     <div>
                         <input type="hidden" name="id" value="<?php echo getMemberId($_SESSION['email']) ?>">
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hname" placeholder="Hostel name" required>
                     </div>
-                    <div id="name_input">
-                        <input type="text" name="htype" placeholder="Hostel Type" required>
+                    <div>
+                        <select name="htype" id="" required>
+                            <option value="Boys">Boys</option>
+                            <option value="Girls">Girls</option>
+                        </select>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hcity" placeholder="City" required>
                     </div>
-                    <div id="name_input">
+                    <div>
                         <input type="text" name="hsector" placeholder="Sector" required>
                     </div>
-                    <div id="name_input">
-                        <textarea name="haddress" placeholder="Enter Your Address.."></textarea>
+                    <div>
+                        <textarea name="haddress" placeholder="Enter Your Address.." required></textarea>
                     </div>
                     <div> 
                         <label for="">Select Hostel Cover</label><br>
@@ -63,5 +63,4 @@
 
     </div>
 </body>
-
 </html>

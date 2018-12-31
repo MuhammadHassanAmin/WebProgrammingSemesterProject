@@ -1,11 +1,11 @@
  <?php 
 if (isset($_GET['status1'])&&isset($_GET['mod'])) {
     ?>
-    <div class="ft">
+    <div class="fk">
         <?php 
         sleep(1);
         $hosel_id=$_GET['status1'];
-        $db=mysqli_connect("localhost","root","","hosteltracker");
+        $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $query = "SELECT * FROM features where hostel_id='".$hosel_id."'";
         $result = $db->query($query);
         if (!empty($result)) {
@@ -39,8 +39,9 @@ else if (isset($_GET['status1'])&&!(isset($_GET['mod']))) {
     ?>
     <div class="ft">
         <?php 
+        sleep(1);
         $hosel_id=$_GET['status1'];
-        $db=mysqli_connect("localhost","root","","hosteltracker");
+        $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $query = "SELECT * FROM features where hostel_id='".$hosel_id."'";
         $result = $db->query($query);
         if (!empty($result)) {

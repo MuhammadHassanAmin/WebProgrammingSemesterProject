@@ -2,9 +2,7 @@
 	include 'includes/config.php';
 
 	if (isset($_POST['email'])&&isset($_POST['pass'])) {
-
-		//$conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
-		$conn=mysqli_connect("localhost","root","","hosteltracker");
+		$conn=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         if ($conn->connect_error) {
             trigger_error('Database connection failed: ' .
             $conn->connect_error, E_USER_ERROR);
@@ -15,19 +13,31 @@
 
 		$sql="SELECT * FROM houser where email ='".$em."' AND pass='".$pw."'";
 
-	
-		//$result = mysqli_query($conn,$sql);
 		$result = $conn->query($sql);
 		if($result->num_rows > 0){
 			while ($row = mysqli_fetch_assoc($result)) {
 				$_SESSION['valid'] = true;
 	        	$_SESSION['timeout'] = time();
 				$_SESSION['email'] = $row['email'];
-				$_SESSION['upic'] = $row['picture'];
+				$_SESSION['role'] = $row['role'];
 				$_SESSION['uname'] = $row['name'];
 			}
-			header('Location: ho_dashboard.php');
-			//header( "refresh:5;url=ho_dashboard.php" );
+			if($_SESSION['role']=='user')
+			{
+				header('Location: main.php');
+			}
+			else if($_SESSION['role']=='houser')
+			{
+				header('Location: dashboard.php');
+			}
+			else if($_SESSION['role']=='admin')
+			{
+				header('Location: admindashboard.php');
+			}
+			else
+			{
+				header('Location: login.php');
+			}
 		}
 		else
 		{
@@ -37,9 +47,6 @@
 			</script>
 			<?php
 			header( "refresh:1;url=login.php" );
-			
 		}
-		
- 	
- }
+}
 ?>

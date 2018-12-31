@@ -6,8 +6,7 @@ if (isset($_GET['status'])&&isset($_GET['mod'])) {
         sleep(1);
        $hosel_id=$_GET['status'];
        $query = "SELECT * FROM packages where hostel_id='".$hosel_id."'";
-       // $query = "SELECT * FROM packages";
-       $db=mysqli_connect("localhost","root","","hosteltracker");
+       $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $result = $db->query($query);
         if (!empty($result)) {
             ?>
@@ -42,10 +41,10 @@ else if (isset($_GET['status'])&&!(isset($_GET['mod']))) {
     ?>
     <div id="pk">
         <?php 
+        sleep(1);
        $hosel_id=$_GET['status'];
        $query = "SELECT * FROM packages where hostel_id='".$hosel_id."'";
-       // $query = "SELECT * FROM packages";
-       $db=mysqli_connect("localhost","root","","hosteltracker");
+       $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $result = $db->query($query);
         if (!empty($result)) {
             ?>

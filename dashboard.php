@@ -1,21 +1,15 @@
-<?php include 'includes/config.php';  ?>
+<?php include 'includes/config.php'; 
+     if(!(isset($_SESSION['email'])&&$_SESSION['role']=="houser"))
+     {
+         header('Location: login.php');
+     }
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Hostel Tracker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
-    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
-    <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
-
-    <!--[if lt IE 9]>
-	    <script src="/js/respond.min.js"></script>
-	    <script src="/js/html5shiv-printshiv.js"></script>
-	<![endif]-->
- 
+    <?php include 'includes/links.php';?>
 </head>
 
 <body>
@@ -27,7 +21,6 @@
               
                 <section class="d-inline-block options w-95p">
                     <p>Dashboard</p>
-                    <h6>FILTERS</h6>
                     <ul>
                         <li id="ah">Add Hostel</li>
                         <li id="ap">Add Packages</li>
@@ -35,17 +28,12 @@
                         <li id="ag">Add Gallery</li>
                         <li id="vah">View All Hostels</li>
                     </ul>
-                    <div class="admin-search-bar">
-                        <input type="text">
-                        <button type="submit">Search</button>
-                    </div>
-                    <h6>RECENT</h6>
                 </section>
             </nav>
         </aside>
         <article>
             <div id="content">
-
+                <?php include 'view_hostels.php'; ?>
             </div>
         </article>
     </main>
@@ -57,8 +45,6 @@
 </html>
 <script>
     $(document).ready(function () {
-        //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-
         $('#ah').click(function () {
             $('#content').load('add_hostel.php', 'status=view');
             $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");

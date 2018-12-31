@@ -3,16 +3,13 @@
 <html>
 <head>
     <title>Hostel Tracker</title>
-    <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
 </head>
 <body>
-    <div class="admin-form">
+    <div>
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>
-          
-
             <div id="carea">
             <h1>Add Package!</h1>
             <div id="fields">
@@ -47,7 +44,7 @@
                     </div>
                     
                     <div id="name_input">
-                    <textarea name="pdes" placeholder="enter package description.."></textarea>
+                    <textarea name="pdes" placeholder="enter package description.." required></textarea>
                     </div>
                     <div id="name_input">
                         <button type="submit" name="package_action">Add Package</button>
@@ -63,7 +60,6 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
 </body>
 </html> 

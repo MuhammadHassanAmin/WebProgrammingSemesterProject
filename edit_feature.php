@@ -58,13 +58,13 @@
             <h1>Add Feature!</h1>
             <form action="#" method="get">
                 <div>
-                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>">
+                    <input type="hidden" name="id" value="<?php echo $product_array['id'] ?>" required>
                 </div>
                 <div>
-                    <input type="text" name="fname" value="<?php echo $product_array['feature_name'] ?>">
+                    <input type="text" name="fname" value="<?php echo $product_array['feature_name'] ?>" required>
                 </div>
                 <div>
-                    <textarea name="fdes"><?php echo $product_array['feature_des'] ?></textarea>
+                    <textarea name="fdes" required><?php echo $product_array['feature_des'] ?></textarea>
                 </div>
                 
                 <div>
@@ -79,7 +79,6 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
 </body>
 </html> 

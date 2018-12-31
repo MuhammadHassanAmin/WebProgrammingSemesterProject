@@ -24,67 +24,15 @@ if (isset($_GET['submitRating'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Hostel Tracker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
+    <title>Hostel Tracker</title>    
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
-    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
     <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
-
-    <!--[if lt IE 9]>
-	    <script src="/js/respond.min.js"></script>
-	    <script src="/js/html5shiv-printshiv.js"></script>
-	<![endif]-->
-    <style>
-        /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
+    <?php include 'includes/links.php'; ?>
 </head>
-
 <body>
    <?php include 'includes/header.php' ?>
-    <!--   Main Content  -->
     <main class="main-container">
         <div class="section-heading">
             <h2>
@@ -125,8 +73,12 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
-                        <button id="myBtn">Rate Now</button>
-
+                        <?php 
+                            if(isset($_SESSION['email']))
+                            {?>
+                                <button class="myBtn">Rate Now</button><?php
+                            }
+                        ?>
                         <a class="view-more-button" href="hostel.php?id=<?php echo $item['id']; ?>">View Details</a>
                     </div>
                 <?php
@@ -134,14 +86,15 @@ if (isset($_GET['submitRating'])) {
             }
             ?>
         </section>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+         <!-- The Modal -->
+         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
                 <form action="" method="get">
                     <div class="rateHotel"></div>
+                    <input type="text" name="id" value="val()">
                     <input type="submit" name="submitRating">
                 </form>
             </div>
@@ -151,6 +104,7 @@ if (isset($_GET['submitRating'])) {
         include 'includes/footer.php';
     ?>
 </body>
+</html>
 <script>
     $(function () {
 
@@ -175,31 +129,24 @@ if (isset($_GET['submitRating'])) {
         }
     });
 
-    // Get the modal
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
+    $('.myBtn').click(function(){
+        modal.style.display = "block";
+    });
+    function val()
+    {
+        return  $('input[name="idd"]').val();
+    }
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 </script>
-
-</html>
