@@ -105,8 +105,11 @@ if (isset($_GET['submitRating'])) {
     ?>
     <script>
     $(function () {
-
-        $(".rateYo").rateYo({
+        $(".rateYo:even").rateYo({
+            rating: 4.8,
+            readOnly: true
+        });
+        $(".rateYo:odd").rateYo({
             rating: 3.8,
             readOnly: true
         });

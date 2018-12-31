@@ -1,15 +1,15 @@
 <div class="header-top">
         <div class="social-links-top-header">
-            <a href="">
+            <a href="https://www.facebook.com/" target="_blank">
                 <img src="./graphics/facebook.png" alt="">
             </a>
-            <a href="">
+            <a href="https://twitter.com/" target="_blank">
                 <img src="./graphics/twitter.png" alt="">
             </a>
-            <a href="">
+            <a href="https://www.youtube.com/" target="_blank">
                 <img src="./graphics/youtube.png" alt="">
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/" target="_blank">
                 <img src="./graphics/instagram.png" alt="">
             </a>
         </div>

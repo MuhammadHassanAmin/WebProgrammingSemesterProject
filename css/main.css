@@ -1011,7 +1011,10 @@ table {
 		padding-right: 10px; 
 		white-space: nowrap;
 	}
-	
+	img{
+        width: 90%;
+        height: 250px; 
+    }
 	#vh td:nth-of-type(1):before { content: "Hostel Name"; }
 	#vh td:nth-of-type(2):before { content: "Hostel Type"; }
 	#vh td:nth-of-type(3):before { content: "City"; }
@@ -1025,7 +1028,10 @@ table {
     .fk td:nth-of-type(1):before { content: "Feature Name"; }
 	.fk td:nth-of-type(2):before { content: "Description"; }
 }
-       
+img{
+    width: 33%;
+    height: 250px; 
+}
 .modal {
     display: none; 
     position: fixed;
@@ -1058,4 +1064,7 @@ table {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+    }
+    ul{
+        list-style: none;
     }

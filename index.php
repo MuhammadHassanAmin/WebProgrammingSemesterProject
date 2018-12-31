@@ -1,11 +1,5 @@
 <?php include 'includes/config.php'; 
-function getRating($id)
-{
-    $query = "SELECT SUM(rating)/COUNT(rating) as rating FROM rating where hostel_id='".$id.'";
-    $result = $db->query($query); 
-    $product_array = mysqli_fetch_assoc($result);
-    return $product_array['rating'];
-}
+
 if (isset($_GET['submitRating'])) {
     $rating = $_COOKIE['rating'];
     $hostel_id =$_COOKIE['hid'];
@@ -95,7 +89,6 @@ if (isset($_GET['submitRating'])) {
                         <h3><?php echo $item['hostel_name'] ?></h3>
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
-                        <p><?php echo getRating($item['id']); ?></p>
                         <div class="rateYo"></div>
                         <?php 
                             if(isset($_SESSION['email'])&&$_SESSION['role']=='user')
@@ -132,11 +125,15 @@ if (isset($_GET['submitRating'])) {
 </html>
 <script>
     $(document).ready(function () {
-
-        $(".rateYo").rateYo({
+        $(".rateYo:even").rateYo({
+            rating: 4.8,
+            readOnly: true
+        });
+        $(".rateYo:odd").rateYo({
             rating: 3.8,
             readOnly: true
         });
+      
         $(".rateHotel").rateYo({
             rating: 3.8,
         });
@@ -144,9 +141,7 @@ if (isset($_GET['submitRating'])) {
         $(".rateHotel").rateYo()
             .on("rateyo.set", function (e, data) {
                 setCookie("rating", data.rating, 1);
-            });
-
-        
+            });  
     });
 
     var modal = document.getElementById('myModal');
@@ -174,18 +169,3 @@ if (isset($_GET['submitRating'])) {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 </script>
-<?php 
-function getRating()
-{
-    $id = 6;
-    $query = "SELECT SUM(rating)/COUNT(rating) as rating FROM rating where hostel_id='".$id.'";
-    $result = $db->query($query); 
-    if (!empty($result)) {
-        while ($item = mysqli_fetch_assoc($result)) { 
-        ?>
-            <p><?php echo $item['rating'] ?></p>
-        <?php
-        }
-    }
-}
-?>

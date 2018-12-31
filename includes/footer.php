@@ -4,16 +4,16 @@
             <h3>Hostel Hub</h3>
             <h4>Get in Touch With Us</h4>
             <div class="social-links-top-footer">
-                <a href="">
+                <a href="https://www.facebook.com/" target="_blank">
                     <img src="./graphics/facebook.png" alt="">
                 </a>
-                <a href="">
+                <a href="https://twitter.com/" target="_blank">
                     <img src="./graphics/twitter.png" alt="">
                 </a>
-                <a href="">
+                <a href="https://www.youtube.com/" target="_blank">
                     <img src="./graphics/youtube.png" alt="">
                 </a>
-                <a href="">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img src="./graphics/instagram.png" alt="">
                 </a>
             </div>
