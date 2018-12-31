@@ -1,14 +1,4 @@
 <?php include 'includes/config.php'; ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Hostel Tracker</title>
-    <meta charset="utf-8">
-    <?php include 'includes/links.php'; ?>
-</head>
-
-<body>
     <div id="carea">
     <h1>Add Gallery!</h1>
         <div id="fields">
@@ -55,10 +45,6 @@
                 <?php 
             }
         ?>
-
-            </div>
-            <div>
-                <div>
-</body>
-
-</html>
+        </div>
+    <div>
+<div>

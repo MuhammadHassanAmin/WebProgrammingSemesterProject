@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	    <title>Hostel Tracker</title>
+	<title>Hostel Hub</title>
     <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
 </head>

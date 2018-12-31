@@ -3,15 +3,20 @@
     {
         header('Location: login.php');
     }
+    if (isset($_GET['delete'])) {
+        $id = $_GET['id'];  
+        $status = 'activated'; 
+        $delete_sql="Delete from contact where id='".$id."'";
+        $db->query($delete_sql);
+        header('Location: admindashboard.php');
+    }
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Hostel Tracker</title>
+    <title>Hostel Hub</title>
     <?php include 'includes/links.php'; ?>
 </head>
-
 <body>
    <?php include("includes/header.php")?>
     <!--   Main Content  -->
@@ -41,18 +46,17 @@
 </html>
 <script>
     $(document).ready(function () {
-
         $('#hh').click(function () {
             $('#content').load('view_all_hostels.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#ho').click(function () {
             $('#content').load('view_all_housers.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#uq').click(function () {
             $('#content').load('show_contacts_msg.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
     });
 </script>

@@ -1,5 +1,4 @@
 <?php
-
     include 'includes/config.php';
     if (isset($_POST['contact_action'])) {
         $name = sanitizeData($_POST['name']);

@@ -693,7 +693,7 @@ footer .footer-right #subscribebtn {
 ------------- Content CSS ---------------------
 */
 main {
-    background: #ddd;
+    /*background: #ddd;*/
 }
 
 .admin-form {
@@ -950,4 +950,68 @@ nav .options .nu {
     text-align: center;
     padding: 40px;
     box-sizing: border-box;
+}
+
+/* Responsive Tables*/
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+  @media only screen and (max-width: 760px),
+(min-width: 768px) and (max-width: 1024px)  {
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	#vh td:nth-of-type(1):before { content: "Hostel Name"; }
+	#vh td:nth-of-type(2):before { content: "Hostel Type"; }
+	#vh td:nth-of-type(3):before { content: "City"; }
+	#vh td:nth-of-type(4):before { content: "Sector"; }
+    #vh td:nth-of-type(5):before { content: "Address"; }
+    
+    #pk td:nth-of-type(1):before { content: "Package Name"; }
+    #pk td:nth-of-type(2):before { content: "Price"; }
+    #pk td:nth-of-type(3):before { content: "Description"; }
+    
+    .fk td:nth-of-type(1):before { content: "Feature Name"; }
+	.fk td:nth-of-type(2):before { content: "Description"; }
 }

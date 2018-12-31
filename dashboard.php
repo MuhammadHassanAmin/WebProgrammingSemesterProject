@@ -37,33 +37,30 @@
             </div>
         </article>
     </main>
-    <footer>
-        <?php include 'includes/footer.php' ?>
-    </footer>
+    <?php include 'includes/footer.php' ?>
 </body>
-
 </html>
 <script>
     $(document).ready(function () {
         $('#ah').click(function () {
             $('#content').load('add_hostel.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#ap').click(function () {
             $('#content').load('add_package.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#af').click(function () {
             $('#content').load('add_feature.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#ag').click(function () {
             $('#content').load('add_gallery.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
         $('#vah').click(function () {
             $('#content').load('view_hostels.php', 'status=view');
-            $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");
+            $('#content').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
         });
     });
 </script>
