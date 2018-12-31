@@ -5,7 +5,7 @@
      }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Hostel Tracker</title>
@@ -19,7 +19,7 @@
         <aside>
             <nav>
               
-                <section class="d-inline-block options w-95p">
+                <div class="d-inline-block options w-95p">
                     <p>Dashboard</p>
                     <ul>
                         <li id="ah">Add Hostel</li>
@@ -28,7 +28,7 @@
                         <li id="ag">Add Gallery</li>
                         <li id="vah">View All Hostels</li>
                     </ul>
-                </section>
+                </div>
             </nav>
         </aside>
         <article>

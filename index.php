@@ -21,7 +21,7 @@ if (isset($_GET['submitRating'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Tracker</title>
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
@@ -33,12 +33,12 @@ if (isset($_GET['submitRating'])) {
     <!--   Main Content  -->
     <main class="main-container">
      
-        <section class="main-container main-search-container">
+        <div class="main-container main-search-container">
             <div class="blur-layer">
                 <div class="search-bar-container">
                     <form action="search.php" method="get">
-                        <input class="big-search-bar" type="text" name="keyword" placeholder="Find the right hostel..." type="text">
-                        <select name="type" id="">
+                        <input class="big-search-bar" type="text" name="keyword" placeholder="Find the right hostel..." >
+                        <select name="type">
                             <option value="city">By City</option>
                             <option value="name">By Name</option>
                         </select>
@@ -46,7 +46,7 @@ if (isset($_GET['submitRating'])) {
                     </form>
                 </div>
             </div>
-        </section>
+        </div>
 
         <div class="section-heading">
             <h2>
@@ -109,18 +109,17 @@ if (isset($_GET['submitRating'])) {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
-                <form action="" method="get">
+               
                     <div class="rateHotel"></div>
                     <input type="submit" name="submitRating">
-                </form>
+               
             </div>
         </div>
     </main>
     <?php include 'includes/contact_form.php';
         include 'includes/footer.php';
     ?>
-</body>
-<script>
+    <script>
     $(function () {
 
         $(".rateYo").rateYo({
@@ -171,5 +170,7 @@ if (isset($_GET['submitRating'])) {
         }
     }
 </script>
+</body>
+
 
 </html>

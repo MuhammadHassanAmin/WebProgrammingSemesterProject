@@ -23,7 +23,7 @@ if (isset($_GET['submitRating'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Tracker</title>    
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
@@ -92,7 +92,7 @@ if (isset($_GET['submitRating'])) {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
-                <form action="" method="get">
+                <form  method="get">
                     <div class="rateHotel"></div>
                     <input type="text" name="id" value="val()">
                     <input type="submit" name="submitRating">
@@ -103,9 +103,7 @@ if (isset($_GET['submitRating'])) {
     <?php
         include 'includes/footer.php';
     ?>
-</body>
-</html>
-<script>
+    <script>
     $(function () {
 
         $(".rateYo").rateYo({
@@ -150,3 +148,5 @@ if (isset($_GET['submitRating'])) {
         }
     }
 </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?php include 'includes/config.php';  ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Tracker</title>
     <?php include 'includes/links.php'; ?>

@@ -305,12 +305,12 @@
     border-style: none;
 }
 
+
 .search-bar-container {
     position: absolute;
-    top: 35%;
+    top: 26%;
     /* margin: 0 auto; */
-    left: 30%;
-    /* display: block; */
+    left: 26%;
 }
 
 .search-bar-container select {
@@ -574,6 +574,11 @@ footer .footer-right #subscribebtn {
 }
 
 @media(min-width: 768px) {
+    /*Search bar on main page*/
+    .search-bar-container {
+        top: 35%;
+        left: 30%;
+    }
 /*Privacy Policy*/
 #privacy-banner {
    
@@ -904,6 +909,7 @@ nav .options .nu {
     width: 100%;
     height: 350px;
     background-image: url("../graphics/bg.jpg");
+    background-position-y: -150px;
     background-size: cover;
     background-attachment: fixed;
 }
