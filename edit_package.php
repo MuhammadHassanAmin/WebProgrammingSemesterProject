@@ -39,7 +39,7 @@ else if (isset($_GET['deletep'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">

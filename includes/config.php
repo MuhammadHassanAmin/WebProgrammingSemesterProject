@@ -1,5 +1,5 @@
 <?php
-	 $path = 'http://localhost/repo/WebProgrammingSemesterProject/';
+	 $path = '/';
 	 
 	 session_start();
  		$DBServer='localhost';

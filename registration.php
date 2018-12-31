@@ -1,6 +1,6 @@
 <?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
@@ -31,16 +31,16 @@
                         <input type="text" name="city" placeholder="City" required>
                     </div>
                     <div>
-                        <textarea name="address" id="" cols="30" rows="10" placeholder="enter your address.." required></textarea>
+                        <textarea name="address"  cols="30" rows="10" placeholder="enter your address.." required></textarea>
                     </div>
                     <div>
-                        <select name="role" id="">
+                        <select name="role" >
                             <option value="user">Public User</option>
                             <option value="houser">Hostel Owner</option>
                         </select>
                     </div>
                     <div> 
-                        <label for="">Select Profile Picture</label><br>
+                        <label >Select Profile Picture</label><br>
                         <input type="file" class="left-30" name="profile">
                     </div>
                     <div>
