@@ -1,12 +1,12 @@
 <?php
-	 $path = '/';
-	 
-	 session_start();
- 		$DBServer='localhost';
-        $DBUser='root';
-        $DBPass='';
-		$DBName='hosteltracker';
-		$db=mysqli_connect("localhost","root","","hosteltracker");
+	$path = 'http://localhost/repo/WebProgrammingSemesterProject/';
+	session_start();
+
+	$DBServer='localhost';
+	$DBUser='root';
+	$DBPass='';
+	$DBName='hosteltracker';
+	$db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
 		
 	 function sanitizeData($data) {
 		$data = trim($data);
@@ -16,7 +16,11 @@
 	}
 	function getMemberId($email)
 	{
-		$db=mysqli_connect("localhost","root","","hosteltracker");
+		$DBServer='localhost';
+		$DBUser='root';
+		$DBPass='';
+		$DBName='hosteltracker';
+		$db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $sql="select id from houser where email='".$email."';";
         $result = mysqli_query($db,$sql);
         $product_array = mysqli_fetch_assoc($result);

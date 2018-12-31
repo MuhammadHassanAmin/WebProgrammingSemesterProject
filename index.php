@@ -2,7 +2,7 @@
 <?php 
 if (isset($_GET['submitRating'])) {
     $rating = $_COOKIE['rating'];
-    $hostel_id =1;
+    $hostel_id =$_COOKIE['hid'];
     $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
     if ($conn->connect_error) {
     trigger_error('Database connection failed: ' .
@@ -24,9 +24,9 @@ if (isset($_GET['submitRating'])) {
 <html lang="en">
 <head>
     <title>Hostel Tracker</title>
+    <?php include 'includes/links.php'; ?>
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
-    <?php include 'includes/links.php'; ?>
 </head>
 <body>
    <?php include 'includes/header.php' ?>
@@ -92,7 +92,7 @@ if (isset($_GET['submitRating'])) {
                         <?php 
                             if(isset($_SESSION['email'])&&$_SESSION['role']=='user')
                             {?>
-                                <button class="myBtn">Rate Now</button><?php
+                                <button class="myBtn" value="<?php echo $item['id']; ?>">Rate Now</button><?php
                             }
                         ?>
                         <a class="view-more-button" href="hostel.php?id=<?php echo $item['id']; ?>">View Details</a>
@@ -109,18 +109,21 @@ if (isset($_GET['submitRating'])) {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
-               
+                <form action="" method="get">
                     <div class="rateHotel"></div>
                     <input type="submit" name="submitRating">
-               
+                </form>
             </div>
         </div>
     </main>
     <?php include 'includes/contact_form.php';
         include 'includes/footer.php';
     ?>
-    <script>
-    $(function () {
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
 
         $(".rateYo").rateYo({
             rating: 3.8,
@@ -135,42 +138,31 @@ if (isset($_GET['submitRating'])) {
                 setCookie("rating", data.rating, 1);
             });
 
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
+        
     });
 
-    // Get the modal
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
-    //var btn = document.getElementByClassName("myBtn");
     $('.myBtn').click(function(){
-       
+        setCookie('hid',$(this).val(),1);
         modal.style.display = "block";
     }); 
-    // Get the <span> element that closes the modal
+
     var span = document.getElementsByClassName("close")[0];
     
-    // When the user clicks the button, open the modal 
-   
-
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
 </script>
-</body>
-
-
-</html>
