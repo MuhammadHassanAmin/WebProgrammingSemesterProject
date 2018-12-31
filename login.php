@@ -1,13 +1,11 @@
 <?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
 </head>
-
 <body>
     <?php
         include "includes/header.php";

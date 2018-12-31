@@ -1,13 +1,11 @@
 <?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
 </head>
-
 <body>
     <?php
         include "includes/header.php";
@@ -19,8 +17,7 @@
 		<br>
 
                 <form action="registration-action.php" method="post" enctype="multipart/form-data">
-                         <div>
-
+                    <div>
                         <input type="text" name="username" placeholder="user name" required>
                     </div>
                     <div>

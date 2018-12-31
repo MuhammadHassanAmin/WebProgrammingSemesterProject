@@ -11,8 +11,6 @@
     <?php 
             if (isset($_SESSION['email'])) {
                 ?>
-          
-
             <div id="carea">
             <h1>Add Package!</h1>
             <div id="fields">
@@ -63,7 +61,6 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
 </body>
 </html> 

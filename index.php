@@ -14,9 +14,7 @@ if (isset($_GET['submitRating'])) {
         ' Error: ' . $conn->error, E_USER_ERROR);
         } else {
         echo "Rating done successfully<br />";
-        header( "refresh:1;url=main.php" );
-    /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-        echo "Affected Rows: " . $conn->affected_rows . "<br />";*/           
+        header( "refresh:1;url=index.php" );           
     }
     $conn->close();
     }
@@ -24,7 +22,6 @@ if (isset($_GET['submitRating'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
@@ -35,48 +32,7 @@ if (isset($_GET['submitRating'])) {
     <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
     <?php include 'includes/links.php'; ?>
-    <style>
-        /* The Modal (background) */
-        .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        }
-
-        /* The Close Button */
-        .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-        }
-</style>
 </head>
-
 <body>
    <?php include 'includes/header.php' ?>
     <!--   Main Content  -->

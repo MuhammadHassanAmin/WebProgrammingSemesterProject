@@ -4,7 +4,6 @@
         header('Location: login.php');
     }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -16,12 +15,7 @@
     <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
     <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
-
-    <!--[if lt IE 9]>
-	    <script src="/js/respond.min.js"></script>
-	    <script src="/js/html5shiv-printshiv.js"></script>
-	<![endif]-->
-   -->
+    <?php include 'includes/links.php'; ?>
 </head>
 
 <body>
@@ -50,7 +44,6 @@
     <?php include 'includes/footer.php';  ?>
 
 </body>
-
 </html>
 <script>
     $(document).ready(function () {

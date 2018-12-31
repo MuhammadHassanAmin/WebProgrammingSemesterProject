@@ -79,7 +79,6 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
 </body>
 </html> 

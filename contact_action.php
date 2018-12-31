@@ -22,8 +22,6 @@
             } else {
             echo "Your query is successfully sended!<br/>";
             saveInCookie($name,$email);
-           /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/
             header( "refresh:2;url=contact_us.php" );
 
         }   

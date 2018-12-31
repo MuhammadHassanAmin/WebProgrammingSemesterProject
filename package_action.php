@@ -1,6 +1,5 @@
 <?php
     include 'includes/config.php';
-
     if (isset($_POST['package_action'])) {
         $name = sanitizeData($_POST['pname']);
         $price = sanitizeData($_POST['pprice']);
@@ -21,11 +20,7 @@
             } else {
             echo "Package added successfully<br />";
             header( "refresh:2;url=ho_dashboard.php" );
-           /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/
-            
         }
-
         $conn->close();
     }
 ?>

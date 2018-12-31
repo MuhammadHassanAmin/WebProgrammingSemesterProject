@@ -1,5 +1,4 @@
 <?php
-
     include 'includes/config.php';
     if (isset($_POST['registration_action'])) {
         $username = sanitizeData($_POST['username']);

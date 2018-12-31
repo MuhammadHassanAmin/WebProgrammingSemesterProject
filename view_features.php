@@ -1,7 +1,7 @@
  <?php 
 if (isset($_GET['status1'])&&isset($_GET['mod'])) {
     ?>
-    <div class="ft">
+    <div class="fk">
         <?php 
         sleep(1);
         $hosel_id=$_GET['status1'];

@@ -1,6 +1,4 @@
-<?php include 'includes/config.php'; 
-
-?>
+<?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +30,7 @@
                     ?>
                 </div>
                 <div>
-                    <input type="file" name="userfile[]" id="img-input" multiple="multiple" required>
+                    <input type="file" name="pictures[]" id="img-input" multiple="multiple" required>
                 </div>
                 <div>
                     <button type="submit" name="addgallery">Add Package</button>
@@ -45,7 +43,6 @@
                 ?><p>Not Logged In!</p><?php 
             }
         ?>
-
     </div>
 </body>
 </html> 

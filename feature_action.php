@@ -16,9 +16,7 @@
             ' Error: ' . $conn->error, E_USER_ERROR);
             } else {
             echo "Feature added successfully<br />";
-            header( "refresh:2;url=ho_dashboard.php" );
-           /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/           
+            header( "refresh:2;url=ho_dashboard.php" );         
         }
         $conn->close();
     }
