@@ -19,7 +19,7 @@
             ' Error: ' . $conn->error, E_USER_ERROR);
             } else {
             echo "Package added successfully<br />";
-            header( "refresh:2;url=ho_dashboard.php" );
+            header( "refresh:2;url=dashboard.php" );
         }
         $conn->close();
     }

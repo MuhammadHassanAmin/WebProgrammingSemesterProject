@@ -72,27 +72,16 @@
             header( "refresh:1;url=registration.php" );
             } else {
             echo 'Your login credentials are sended to your email!';
-                /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-            echo "Affected Rows: " . $conn->affected_rows . "<br />";*/
             header( "refresh:2;url=login.php" );
         }
 
         $conn->close();
         }
     }
-    function randomPassword() {
-        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        $pass = array(); //remember to declare $pass as an array
-        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-        for ($i = 0; $i < 8; $i++) {
-            $n = rand(0, $alphaLength);
-            $pass[] = $alphabet[$n];
-        }
-        return implode($pass); //turn the array into a string
-    }
+    
     function checkEmail($email)
 	{
-		$db=mysqli_connect("localhost","root","","hosteltracker");
+		$db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $sql="select email from houser where email='".$email."';";
         $result = mysqli_query($db,$sql);
         $product_array = mysqli_fetch_assoc($result);

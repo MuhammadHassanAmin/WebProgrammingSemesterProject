@@ -5,7 +5,7 @@ if (isset($_GET['status2'])&&isset($_GET['mod'])) {
         <h1>Gallery!</h1>
         <?php 
         $hosel_id=$_GET['status2'];
-        $db=mysqli_connect("localhost","root","","hosteltracker");
+        $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $query = "SELECT * FROM gallery where hostel_id='".$hosel_id."'";
         $result = $db->query($query);
         if (!empty($result)) {
@@ -26,7 +26,7 @@ else if (isset($_GET['status2'])&&(!isset($_GET['mod']))) {
     <div class="gallery">
         <?php 
         $hosel_id=$_GET['status2'];
-        $db=mysqli_connect("localhost","root","","hosteltracker");
+        $db=mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
         $query = "SELECT * FROM gallery where hostel_id='".$hosel_id."'";
         $result = $db->query($query);
         if (!empty($result)) {

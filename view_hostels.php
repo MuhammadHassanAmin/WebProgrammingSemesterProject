@@ -83,9 +83,7 @@
 </body>
 </html> 
 <script>
-    $(document).ready(function(){
-       //$('#pfdata').load('view_hostels.php','status='+$('input[name=status]:checked').val());
-       
+    $(document).ready(function(){       
        $('.pks').click(function(){
            $('#pfdata').load('view_packages.php','status='+$(this).val());
            $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");

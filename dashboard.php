@@ -51,8 +51,6 @@
 </html>
 <script>
     $(document).ready(function () {
-        //$('#pfdata').load('view_packages.php','status='+$('input[name=status]:checked').val());
-
         $('#ah').click(function () {
             $('#content').load('add_hostel.php', 'status=view');
             $('#content').html("<img src=graphics/loading.gif' alt='Loading Packages...'>");

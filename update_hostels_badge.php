@@ -17,4 +17,8 @@
         echo 'Successfully removed the badge!';
         header( "refresh:1;url=view_all_hostels.php" );
     }
+    else
+    {
+        header( "refresh:0;url=view_all_hostels.php" );     
+    }
 ?>

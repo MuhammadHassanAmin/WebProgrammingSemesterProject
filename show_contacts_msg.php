@@ -5,7 +5,6 @@
         $delete_sql="delete from contact where id='".$id."'";
         $db->query($delete_sql);
         header('Location: show_contacts_msg.php');
-        //header( "refresh:1;url=view_all_hostels.php" );
     }
 ?>
 <!DOCTYPE html>
@@ -17,9 +16,6 @@
     <?php include 'includes/links.php'; ?>
 </head>
 <body>
-    <?php
-        //include "includes/header.php";
-    ?>
     <div class="admin-form">
     <?php 
             if (isset($_SESSION['email'])) {

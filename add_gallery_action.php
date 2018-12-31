@@ -10,7 +10,7 @@ if (isset($_POST['addgallery'])) {
     if($fileCount+$num_rows>15)
     {
         echo 'You cannot select more than 15 images to one hostel!';
-        header( "refresh:2;url=ho_dashboard.php" );
+        header( "refresh:2;url=dashboard.php" );
     }
     else
     {
