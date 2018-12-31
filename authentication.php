@@ -24,7 +24,7 @@
 			}
 			if($_SESSION['role']=='user')
 			{
-				header('Location: main.php');
+				header('Location: index.php');
 			}
 			else if($_SESSION['role']=='houser')
 			{

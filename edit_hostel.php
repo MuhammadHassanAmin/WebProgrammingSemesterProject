@@ -44,7 +44,7 @@ else if (isset($_GET['deleteh'])) {
         </style>
     <?php
     echo 'Successfully deleted the hostel!';
-    header( "refresh:2;url=view_hostels.php" );
+    header( "refresh:2;url=dashboard.php" );
 }
 ?>
 <!DOCTYPE html>

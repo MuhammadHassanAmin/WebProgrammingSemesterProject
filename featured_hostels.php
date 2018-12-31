@@ -1,8 +1,7 @@
-<?php include 'includes/config.php';  ?>
-<?php 
+<?php include 'includes/config.php';  
 if (isset($_GET['submitRating'])) {
     $rating = $_COOKIE['rating'];
-    $hostel_id =1;
+    $hostel_id =$_COOKIE['hid'];
     $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
     if ($conn->connect_error) {
     trigger_error('Database connection failed: ' .
@@ -14,9 +13,7 @@ if (isset($_GET['submitRating'])) {
         ' Error: ' . $conn->error, E_USER_ERROR);
         } else {
         echo "Rating done successfully<br />";
-        header( "refresh:1;url=main.php" );
-    /* echo "Last Inserted ID: " . $conn->insert_id . "<br />";
-        echo "Affected Rows: " . $conn->affected_rows . "<br />";*/           
+        header( "refresh:1;url=featured_hostels.php" );           
     }
     $conn->close();
     }
@@ -26,10 +23,9 @@ if (isset($_GET['submitRating'])) {
 <html lang="en">
 <head>
     <title>Hostel Tracker</title>    
+    <?php include 'includes/links.php'; ?>
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
-    <link rel="icon" href="<?php echo $path ?>graphics/icon.png" type="image/png" sizes="16x16">
-    <?php include 'includes/links.php'; ?>
 </head>
 <body>
    <?php include 'includes/header.php' ?>
@@ -74,9 +70,9 @@ if (isset($_GET['submitRating'])) {
                         <p><?php echo $item['hostel_address'] ?></p>
                         <div class="rateYo"></div>
                         <?php 
-                            if(isset($_SESSION['email']))
+                            if(isset($_SESSION['email'])&&$_SESSION['role']=='user')
                             {?>
-                                <button class="myBtn">Rate Now</button><?php
+                                <button class="myBtn" value="<?php echo $item['id']; ?>">Rate Now</button><?php
                             }
                         ?>
                         <a class="view-more-button" href="hostel.php?id=<?php echo $item['id']; ?>">View Details</a>
@@ -92,9 +88,8 @@ if (isset($_GET['submitRating'])) {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Hostel Rating</h1>
-                <form  method="get">
+                <form method="get">
                     <div class="rateHotel"></div>
-                    <input type="text" name="id" value="val()">
                     <input type="submit" name="submitRating">
                 </form>
             </div>
@@ -103,8 +98,8 @@ if (isset($_GET['submitRating'])) {
     <?php
         include 'includes/footer.php';
     ?>
-    <script>
-    $(function () {
+ <script>
+    $(document).ready(function () {
         $(".rateYo:even").rateYo({
             rating: 4.8,
             readOnly: true
@@ -113,6 +108,7 @@ if (isset($_GET['submitRating'])) {
             rating: 3.8,
             readOnly: true
         });
+      
         $(".rateHotel").rateYo({
             rating: 3.8,
         });
@@ -120,27 +116,18 @@ if (isset($_GET['submitRating'])) {
         $(".rateHotel").rateYo()
             .on("rateyo.set", function (e, data) {
                 setCookie("rating", data.rating, 1);
-            });
-
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
+            });  
     });
 
     var modal = document.getElementById('myModal');
 
     $('.myBtn').click(function(){
+        setCookie('hid',$(this).val(),1);
         modal.style.display = "block";
-    });
-    function val()
-    {
-        return  $('input[name="idd"]').val();
-    }
-    var span = document.getElementsByClassName("close")[0];
+    }); 
 
+    var span = document.getElementsByClassName("close")[0];
+    
     span.onclick = function () {
         modal.style.display = "none";
     }
@@ -149,6 +136,12 @@ if (isset($_GET['submitRating'])) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 </script>
 </body>

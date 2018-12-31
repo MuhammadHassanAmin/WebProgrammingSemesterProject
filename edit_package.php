@@ -18,7 +18,7 @@ if (isset($_GET['updatep'])) {
         </style>
     <?php
     echo 'Successfully updated the package!';
-   header( "refresh:2;url=view_hostels.php" );
+   header( "refresh:2;url=dashboard.php" );
 }
 else if (isset($_GET['deletep'])) {
     $id = sanitizeData($_GET['id']);   
@@ -35,7 +35,7 @@ else if (isset($_GET['deletep'])) {
         </style>
     <?php
     echo 'Successfully deleted the package!';
-    header( "refresh:2;url=view_hostels.php" );
+    header( "refresh:2;url=dashboard.php" );
 }
 ?>
 <!DOCTYPE html>
