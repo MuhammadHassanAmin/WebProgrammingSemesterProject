@@ -22,7 +22,7 @@
         <span class="footer-right">
             <div class="vertically-align-center">
                 <h3>SUBSCRIBE</h3>
-                <h4>To Get Latest Discount Offers!</h4>
+                <h4>To Get Latest Hostels Updates In Your Town</h4>
                 <input type="text">
                 <button id="subscribebtn" type="submit">SUBSCRIBE NOW!</button>
             </div>
