@@ -1,5 +1,11 @@
-<?php include 'includes/config.php';  ?>
-<?php 
+<?php include 'includes/config.php'; 
+function getRating($id)
+{
+    $query = "SELECT SUM(rating)/COUNT(rating) as rating FROM rating where hostel_id='".$id.'";
+    $result = $db->query($query); 
+    $product_array = mysqli_fetch_assoc($result);
+    return $product_array['rating'];
+}
 if (isset($_GET['submitRating'])) {
     $rating = $_COOKIE['rating'];
     $hostel_id =$_COOKIE['hid'];
@@ -24,7 +30,7 @@ if (isset($_GET['submitRating'])) {
 <html lang="en">
 <head>
     <title>Hostel Tracker</title>
-    <?php include 'includes/links.php'; ?>
+    <?php include 'includes/links.php';?>
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
 </head>
@@ -83,11 +89,13 @@ if (isset($_GET['submitRating'])) {
                         {
                             $image = './graphics/hostelpic3.jpg';
                         }
+                       
                     ?>
                         <img class="hostel-feature-image" src="<?php echo $image; ?>" alt="">
                         <h3><?php echo $item['hostel_name'] ?></h3>
                         <p><?php echo $item['hostel_type'] ?> Hostel</p>
                         <p><?php echo $item['hostel_address'] ?></p>
+                        <p><?php echo getRating($item['id']); ?></p>
                         <div class="rateYo"></div>
                         <?php 
                             if(isset($_SESSION['email'])&&$_SESSION['role']=='user')
@@ -166,3 +174,18 @@ if (isset($_GET['submitRating'])) {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 </script>
+<?php 
+function getRating()
+{
+    $id = 6;
+    $query = "SELECT SUM(rating)/COUNT(rating) as rating FROM rating where hostel_id='".$id.'";
+    $result = $db->query($query); 
+    if (!empty($result)) {
+        while ($item = mysqli_fetch_assoc($result)) { 
+        ?>
+            <p><?php echo $item['rating'] ?></p>
+        <?php
+        }
+    }
+}
+?>
