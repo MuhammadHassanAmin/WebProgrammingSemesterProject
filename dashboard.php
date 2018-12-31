@@ -38,9 +38,7 @@
         </article>
     </main>
     <?php include 'includes/footer.php' ?>
-</body>
-</html>
-<script>
+    <script>
     $(document).ready(function () {
         $('#ah').click(function () {
             $('#content').load('add_hostel.php', 'status=view');
@@ -64,3 +62,5 @@
         });
     });
 </script>
+</body>
+</html>
