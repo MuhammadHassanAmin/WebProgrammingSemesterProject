@@ -961,7 +961,10 @@ nav .options .nu {
     padding: 40px;
     box-sizing: border-box;
 }
-
+.gallery img{
+    width:25%;
+    height: 250px;
+}
 /* Responsive Tables*/
 table { 
     width: 100%; 
@@ -983,11 +986,11 @@ table {
   }
   @media only screen and (max-width: 760px),
 (min-width: 768px) and (max-width: 1024px)  {
-
+    
 	table, thead, tbody, th, td, tr { 
 		display: block; 
-	}
-	
+    }
+
 	thead tr { 
 		position: absolute;
 		top: -9999px;
@@ -1011,10 +1014,7 @@ table {
 		padding-right: 10px; 
 		white-space: nowrap;
 	}
-	img{
-        width: 90%;
-        height: 250px; 
-    }
+	
 	#vh td:nth-of-type(1):before { content: "Hostel Name"; }
 	#vh td:nth-of-type(2):before { content: "Hostel Type"; }
 	#vh td:nth-of-type(3):before { content: "City"; }
@@ -1026,12 +1026,13 @@ table {
     #pk td:nth-of-type(3):before { content: "Description"; }
     
     .fk td:nth-of-type(1):before { content: "Feature Name"; }
-	.fk td:nth-of-type(2):before { content: "Description"; }
+    .fk td:nth-of-type(2):before { content: "Description"; }
+    .gallery img{
+        width:90%;
+        height: 300px;
+    }
 }
-img{
-    width: 33%;
-    height: 250px; 
-}
+
 .modal {
     display: none; 
     position: fixed;

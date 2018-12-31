@@ -84,16 +84,14 @@
 </div> 
 <script>
     $(document).ready(function(){
-        $(document).ready(function(){       
-       $('.pks').click(function(){
-           $('#pfdata').load('view_packages.php','status='+$(this).val());
-           $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
-       });
-       
-       $('.fks').click(function(){
-           $('#pfdata').load('view_features.php','status1='+$(this).val());
-           $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
-       });
-    });
+            $('.pks').click(function(){
+                $('#pfdata').load('view_packages.php','status='+$(this).val());
+                $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
+            });
+            
+            $('.fks').click(function(){
+                $('#pfdata').load('view_features.php','status1='+$(this).val());
+                $('#pfdata').html("<img src='graphics/loading.gif' alt='Loading Packages...'>");
+            });
     });
 </script>

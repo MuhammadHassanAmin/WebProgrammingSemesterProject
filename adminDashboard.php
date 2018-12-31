@@ -12,7 +12,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Hostel Hub</title>
     <?php include 'includes/links.php'; ?>
@@ -41,10 +41,7 @@
      <?php include 'view_all_hostels.php'; ?>
     </div>
     <?php include 'includes/footer.php';  ?>
-
-</body>
-</html>
-<script>
+    <script>
     $(document).ready(function () {
         $('#hh').click(function () {
             $('#content').load('view_all_hostels.php', 'status=view');
@@ -60,3 +57,5 @@
         });
     });
 </script>
+</body>
+</html>

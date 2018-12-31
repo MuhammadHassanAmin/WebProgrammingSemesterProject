@@ -34,7 +34,7 @@
                         <span></span>
                     </label>
                 </div>
-                <input type="checkbox" id="nav-check">
+                <input type="checkbox" id="nav-check" name="name" />
                 <div class="nav-links">
                     <a href="<?php $path ?>featured_hostels.php">Featured Hostels</a>
                     <a href="<?php $path ?>about_us.php">About</a>
