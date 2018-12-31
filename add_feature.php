@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Hostel Tracker</title>
-    <meta charset="utf-8">
     <?php include 'includes/links.php'; ?>
 </head>
 <body>
@@ -16,7 +15,6 @@
             <div id="fields">
                 <div class="sep"></div>
                 <br>
-
                 <form action="feature_action.php" method="post">
                     <div>
                         <?php 

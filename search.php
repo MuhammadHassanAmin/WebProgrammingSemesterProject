@@ -4,7 +4,6 @@
 <head>
     <title>Hostel Tracker</title>
     <meta charset="utf-8">
-    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <?php include 'includes/links.php'; ?>
 </head>
 <body>

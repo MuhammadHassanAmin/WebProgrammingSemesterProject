@@ -24,12 +24,7 @@ if (isset($_GET['submitRating'])) {
 <html>
 <head>
     <title>Hostel Tracker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo $path ?>css/main.css">
     <link rel="stylesheet" href="<?php echo $path ?>css/jquery.rateyo.css" />
-    <script src="<?php echo $path ?>js/jquery-3.2.1.min.js"></script>
     <script src="<?php echo $path ?>js/jquery.rateyo.js"></script>
     <?php include 'includes/links.php'; ?>
 </head>

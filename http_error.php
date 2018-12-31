@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Smart It Solutions</title>
-    <meta charset="utf-8">
+	<title>Hostel Hub</title>
     <?php include 'includes/links.php'; ?>
 </head>
 <body>
