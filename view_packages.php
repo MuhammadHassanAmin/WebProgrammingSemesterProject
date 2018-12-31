@@ -1,4 +1,6 @@
 <?php 
+include_once 'includes/config.php';
+
 if (isset($_GET['status'])&&isset($_GET['mod'])) {
     ?>
     <div id="pk">

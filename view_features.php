@@ -1,4 +1,5 @@
  <?php 
+ include_once 'includes/config.php';
 if (isset($_GET['status1'])&&isset($_GET['mod'])) {
     ?>
     <div class="fk">

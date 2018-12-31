@@ -1,4 +1,6 @@
 <?php
+include_once 'includes/config.php';
+
 if (isset($_GET['status2'])&&isset($_GET['mod'])) {
     ?>
     <div class="gallery">
@@ -13,7 +15,7 @@ if (isset($_GET['status2'])&&isset($_GET['mod'])) {
             <?php
             while ($item = mysqli_fetch_assoc($result)) {
                 ?>
-                   <img src="<?php echo 'graphics/'.$item['picture'] ?>" alt="No Picture">
+                   <img src="<?php echo 'graphics/hostels/'.$item['picture'] ?>" alt="No Picture">
                 <?php
             }
         }
@@ -34,7 +36,7 @@ else if (isset($_GET['status2'])&&(!isset($_GET['mod']))) {
             <?php
             while ($item = mysqli_fetch_assoc($result)) {
                 ?>
-                   <img src="<?php echo 'graphics/'.$item['picture'] ?>" alt="No Picture">
+                   <img src="<?php echo 'graphics/hostels/'.$item['picture'] ?>" alt="No Picture">
                 <?php
             }
          }

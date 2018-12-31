@@ -28,18 +28,18 @@ if (isset($_POST['addgallery'])) {
             {
                 $picture = $_FILES["pictures"]["name"][$i];
             
-                if (file_exists("graphics/" . $_FILES["pictures"]["name"][$i]))
+                if (file_exists("graphics/hostels/" . $_FILES["pictures"]["name"][$i]))
                     {
                         echo $_FILES["pictures"]["name"][$i] . " already exists. ";
                     }
                 else
                     {
                         move_uploaded_file($_FILES["pictures"]["tmp_name"][$i],
-                        "graphics/" . $_FILES["pictures"]["name"][$i]);
+                        "graphics/hostels/" . $_FILES["pictures"]["name"][$i]);
                         $picture = $_FILES["pictures"]["name"][$i];
                         $ext = pathinfo($picture, PATHINFO_EXTENSION);
                         $save_picture = 'image'.microtime().'.'.$ext;
-                        rename('graphics/'.$picture,'graphics/'.$save_picture);
+                        rename('graphics/hostels/'.$picture,'graphics/hostels/'.$save_picture);
                         $sql="INSERT INTO gallery (hostel_id,picture) 
                         Values('$hostel_id','$save_picture')";
                         mysqli_query($db,$sql);                   
@@ -54,7 +54,7 @@ if (isset($_POST['addgallery'])) {
         echo "Gallery added successfully<br />";
     }
    
-    header( "refresh:2;url=ho_dashboard.php" );
+    header( "refresh:2;url=dashboard.php" );
 }
 else
 {
